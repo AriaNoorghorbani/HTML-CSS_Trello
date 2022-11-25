@@ -1,0 +1,17 @@
+<div class=" add-task">
+  <div class="row">
+    <div style="height: 100px;">
+      <div>
+        <mat-card class="left-side">
+          <div>
+            <mat-form-field appearance="fill" class="input">
+              <mat-label>Enter your task</mat-label>
+              <input matInput placeholder="Reading CSS today" required [formControl]="task">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="add-btn" (click)="onAddTask()">Add todo</button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
