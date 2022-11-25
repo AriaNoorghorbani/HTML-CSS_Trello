@@ -6,21 +6,26 @@ import { ITask } from './model/task';
   providedIn: 'root',
 })
 export class TodoService {
-  todoForm: FormGroup;
-  tasks: ITask[] = [];
+  tasks: ITask[] = [{ description: 'asbe abi', done: false }];
   taskInProgress: ITask[] = [];
   taskDone: ITask[] = [];
 
-  constructor(private fb: FormBuilder) {
-    this.todoForm = this.fb.group({
-      item: ['', Validators.required],
-    });
+  getTask() {
+    return this.tasks;
   }
 
   onAddTask(description: string, done: boolean) {
     this.tasks.push({
-      description: this.todoForm.value.item,
-      done: false,
+      description: description,
+      done: done,
     });
+  }
+
+  onDeleteTodo(i: number) {
+    this.tasks.splice(i, 1);
+  }
+
+  onDeleteInProgressTodo(i: number) {
+    this.taskInProgress.splice(i, 1);
   }
 }

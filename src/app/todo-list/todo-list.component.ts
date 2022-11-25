@@ -20,6 +20,7 @@ export class TodoComponent implements OnInit {
   taskDone: ITask[] = [];
 
   ngOnInit(): void {
+    this.todoService.getTask();
     this.taskList = this.todoService.tasks;
     this.taskInProgress = this.todoService.taskInProgress;
     this.taskDone = this.todoService.taskDone;
@@ -40,5 +41,13 @@ export class TodoComponent implements OnInit {
         event.currentIndex
       );
     }
+  }
+
+  onDelete(i: number) {
+    this.todoService.onDeleteTodo(i);
+  }
+
+  onDeleteInprogress(i: number) {
+    this.todoService.onDeleteInProgressTodo(i);
   }
 }

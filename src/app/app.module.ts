@@ -14,11 +14,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddTaskComponent } from './add-task/add-task.component';
+import { AddTaskComponent } from './add-todo/add-todo.component';
 import { TodoComponent } from './todo-list/todo-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, TodoComponent, AddTaskComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    TodoComponent,
+    AddTaskComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

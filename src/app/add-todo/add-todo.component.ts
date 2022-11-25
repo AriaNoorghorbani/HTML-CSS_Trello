@@ -8,13 +8,12 @@ import {
 import { TodoService } from '../todo.service';
 
 @Component({
-  selector: 'app-add-task',
-  templateUrl: './add-task.component.html',
-  styleUrls: ['./add-task.component.scss'],
+  selector: 'app-add-todo',
+  templateUrl: './add-todo.component.html',
+  styleUrls: ['./add-todo.component.scss'],
 })
 export class AddTaskComponent implements OnInit {
   todoForm: FormGroup;
-  task = new FormControl();
 
   constructor(private todoService: TodoService, private fb: FormBuilder) {
     this.todoForm = this.fb.group({
@@ -25,9 +24,6 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddTask() {
-    this.todoService.onAddTask(
-      this.todoForm.value.item,
-      this.todoForm.value.done
-    );
+    this.todoService.onAddTask(this.todoForm.value.item, false);
   }
 }

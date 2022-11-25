@@ -4,9 +4,9 @@
       <div>
         <mat-card class="left-side">
           <div>
-            <mat-form-field appearance="fill" class="input">
+            <mat-form-field appearance="fill" class="input" [formGroup]="todoForm">
               <mat-label>Enter your task</mat-label>
-              <input matInput placeholder="Reading CSS today" required [formControl]="task">
+              <input matInput placeholder=" Reading CSS today" required formControlName="item">
             </mat-form-field>
             <button mat-raised-button color="primary" class="add-btn" (click)="onAddTask()">Add todo</button>
           </div>
