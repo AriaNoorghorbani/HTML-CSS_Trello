@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { ITask } from './model/task';
 
 @Injectable({
@@ -9,6 +10,9 @@ export class TodoService {
   tasks: ITask[] = [{ description: 'asbe abi', done: false }];
   taskInProgress: ITask[] = [];
   taskDone: ITask[] = [];
+  updatedIndex!: any;
+  editMode = false;
+  todoChanges = new Subject<ITask[]>();
 
   getTask() {
     return this.tasks;
@@ -27,5 +31,13 @@ export class TodoService {
 
   onDeleteInProgressTodo(i: number) {
     this.taskInProgress.splice(i, 1);
+  }
+
+  onEditTodo(item: ITask, i: number) {
+    this.tasks[i].description = item.description;
+    // this.todoForm.controls['item'].setValue(item.description);
+    this.updatedIndex = i;
+    this.editMode = true;
+    this.todoChanges.next(this.tasks.slice());
   }
 }

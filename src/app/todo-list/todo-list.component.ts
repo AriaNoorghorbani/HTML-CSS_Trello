@@ -15,6 +15,8 @@ import { TodoService } from '../todo.service';
 export class TodoComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
+  editMode = false;
+
   taskList: ITask[] = [];
   taskInProgress: ITask[] = [];
   taskDone: ITask[] = [];
@@ -49,5 +51,11 @@ export class TodoComponent implements OnInit {
 
   onDeleteInprogress(i: number) {
     this.todoService.onDeleteInProgressTodo(i);
+  }
+
+  onEdit(item: ITask, i: number) {
+    debugger;
+    this.editMode = true;
+    this.todoService.onEditTodo(item, i);
   }
 }
