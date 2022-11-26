@@ -4,6 +4,8 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { ITask } from '../model/task';
 import { TodoService } from '../todo.service';
 
@@ -13,7 +15,7 @@ import { TodoService } from '../todo.service';
   styleUrls: ['./todo-list.component.scss'],
 })
 export class TodoComponent implements OnInit {
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService, public dialog: MatDialog) {}
 
   editMode = false;
 
@@ -54,8 +56,13 @@ export class TodoComponent implements OnInit {
   }
 
   onEdit(item: ITask, i: number) {
+    this.dialog.open(EditDialogComponent);
     debugger;
     this.editMode = true;
     this.todoService.onEditTodo(item, i);
+  }
+
+  openDialog() {
+    this.dialog.open(EditDialogComponent);
   }
 }

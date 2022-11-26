@@ -1,17 +1,20 @@
 <div class=" add-task">
   <div class="row">
-    <div style="height: 100px;">
+    <mat-card>
       <div>
-        <mat-card class="left-side">
-          <div>
-            <mat-form-field appearance="fill" class="input" [formGroup]="todoForm">
-              <mat-label>Enter your task</mat-label>
-              <input matInput placeholder=" Reading CSS today" required formControlName="item">
-            </mat-form-field>
-            <button mat-raised-button class="add-btn" (click)="onAddTask()">Add todo</button>
-          </div>
-        </mat-card>
+        <form [formGroup]="todoForm">
+          <mat-form-field appearance="fill" class="input">
+            <mat-label>Enter your title</mat-label>
+            <input matInput placeholder=" Reading CSS today" required formControlName="title">
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="input">
+            <mat-label>Enter your description</mat-label>
+            <textarea rows="3" matInput placeholder=" Reading CSS today" required
+              formControlName="description"></textarea>
+          </mat-form-field>
+        </form>
       </div>
-    </div>
+    </mat-card>
+    <button *ngIf="editMode === false" mat-raised-button class="add-btn" (click)="onAddTask()">+ Add</button>
+    <button *ngIf="editMode === true" mat-raised-button class="add-btn" (click)="onAddTask()">edit</button>
   </div>
-</div>

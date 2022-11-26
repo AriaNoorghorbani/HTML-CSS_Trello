@@ -14,16 +14,27 @@ import { TodoService } from '../todo.service';
 })
 export class AddTaskComponent implements OnInit {
   todoForm: FormGroup;
+  editMode = false;
 
   constructor(private todoService: TodoService, private fb: FormBuilder) {
     this.todoForm = this.fb.group({
-      item: ['', Validators.required],
+      title: ['', Validators.required],
+      description: ['', Validators.required],
     });
   }
 
   ngOnInit(): void {}
 
   onAddTask() {
-    this.todoService.onAddTask(this.todoForm.value.item, false);
+    this.todoService.onAddTask(
+      this.todoForm.value.title,
+      this.todoForm.value.description,
+      false
+    );
+    this.todoForm.reset();
+  }
+
+  isEditMode() {
+    this.todoService.isEditMode();
   }
 }

@@ -1,53 +1,63 @@
-<div class=" todo-list">
-  <div cdkDropListGroup>
-    <div class="row">
-      <div class="col-md-4">
-        <h2>TO DO</h2>
-        <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskList" class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of taskList; let i = index" cdkDrag>{{item.description}}
-            <div>
-              <button mat-icon-button (click)="onDelete(i)">
-                <mat-icon>delete</mat-icon>
-              </button>
-              <button mat-icon-button (click)="onEdit(item,i)">
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
+<div class="todo-list">
+  <div cdkDropListGroup class="row">
+    <div class=" list col-md-4">
+      <h2>TO DO</h2>
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskList" class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box row" *ngFor="let item of taskList; let i = index" cdkDrag>
+          <div class="col-md-9">
+            <h2>{{item.title}}</h2>
+            {{item.description}}
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h2>IN PROGRESS</h2>
-        <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskInProgress" class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of taskInProgress; let i = index" cdkDrag>{{item.description}}
-            <div>
-              <button mat-icon-button (click)="onDeleteInprogress(i)">
-                <mat-icon>delete</mat-icon>
-              </button>
-              <button mat-icon-button>
-                <mat-icon>edit</mat-icon>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class=" col-md-4">
-        <h2>DONE</h2>
-        <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskDone" class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of taskDone" cdkDrag>{{item.description}}
-            <div>
-              <button mat-icon-button>
-                <mat-icon>delete</mat-icon>
-              </button>
-              <button mat-icon-button>
-                <mat-icon>circle-success</mat-icon>
-              </button>
-            </div>
+          <div class="col-md-3">
+            <button mat-icon-button (click)="onDelete(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button (click)="onEdit(item,i)">
+              <mat-icon>edit</mat-icon>
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <div class=" list col-md-4">
+      <h2>IN PROGRESS</h2>
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskInProgress" class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box row" *ngFor="let item of taskInProgress; let i = index" cdkDrag>
+          <div class="col-md-9">
+            <h2>{{item.title}}</h2>
+            {{item.description}}
+          </div>
+          <div class="col-md-3">
+            <button mat-icon-button (click)="onDelete(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button (click)="onEdit(item,i)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" list col-md-4">
+      <h2>TO DO</h2>
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskDone" class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box row" *ngFor="let item of taskDone; let i = index" cdkDrag>
+          <div class="col-md-9">
+            <h2>{{item.title}}</h2>
+            {{item.description}}
+          </div>
+          <div class="col-md-3 ">
+            <button mat-icon-button (click)="onDelete(i)">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-icon-button (click)="onEdit(item,i)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

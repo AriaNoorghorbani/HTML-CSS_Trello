@@ -7,7 +7,13 @@ import { ITask } from './model/task';
   providedIn: 'root',
 })
 export class TodoService {
-  tasks: ITask[] = [{ description: 'asbe abi', done: false }];
+  tasks: ITask[] = [
+    {
+      title: 'asbe abi',
+      description: 'asbe abi heyvane najibi ast',
+      done: false,
+    },
+  ];
   taskInProgress: ITask[] = [];
   taskDone: ITask[] = [];
   updatedIndex!: any;
@@ -18,8 +24,9 @@ export class TodoService {
     return this.tasks;
   }
 
-  onAddTask(description: string, done: boolean) {
+  onAddTask(title: string, description: string, done: boolean) {
     this.tasks.push({
+      title: title,
       description: description,
       done: done,
     });
@@ -35,9 +42,16 @@ export class TodoService {
 
   onEditTodo(item: ITask, i: number) {
     this.tasks[i].description = item.description;
-    // this.todoForm.controls['item'].setValue(item.description);
     this.updatedIndex = i;
     this.editMode = true;
     this.todoChanges.next(this.tasks.slice());
+  }
+
+  isEditMode() {
+    if ((this.editMode = true)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

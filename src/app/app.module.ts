@@ -16,6 +16,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddTaskComponent } from './add-todo/add-todo.component';
 import { TodoComponent } from './todo-list/todo-list.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { TodoComponent } from './todo-list/todo-list.component';
     NavbarComponent,
     TodoComponent,
     AddTaskComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { TodoComponent } from './todo-list/todo-list.component';
     MatInputModule,
     MatButtonModule,
     DragDropModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
