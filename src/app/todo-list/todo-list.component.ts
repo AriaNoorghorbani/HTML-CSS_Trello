@@ -57,7 +57,6 @@ export class TodoComponent implements OnInit {
 
   onEdit(item: ITask, i: number) {
     this.dialog.open(EditDialogComponent);
-    debugger;
     this.editMode = true;
     this.todoService.onEditTodo(item, i);
   }
@@ -65,4 +64,12 @@ export class TodoComponent implements OnInit {
   openDialog() {
     this.dialog.open(EditDialogComponent);
   }
+
+  clickMethod(i: number) {
+    if (confirm('Are you sure to delete')) {
+      console.log('Implement delete functionality here');
+      this.todoService.onDeleteTodo(i);
+    }
+  }
+
 }

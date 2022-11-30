@@ -9,4 +9,8 @@ export class EditDialogComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSave(){
+    
+  }
 }
