@@ -3,10 +3,10 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { AfterContentChecked, Component, OnInit } from '@angular/core';
+import { AfterContentChecked, Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from './task-edit-dialog/task-edit-dialog.component';
-import { ITask } from '../model/task';
+import { Task } from '../model/task';
 import { TodoService } from '../todo.service';
 import { DeleteDialogComponent } from './task-delete-dialog/task-delete-dialog.component';
 
@@ -29,33 +29,36 @@ export class TodoComponent implements OnInit, AfterContentChecked {
 
   editMode = false;
 
-  taskList: ITask[] = [];
-  taskInProgress: ITask[] = [];
-  taskDone: ITask[] = [];
+  taskNewList: Task[] = [];
+  taskInProgressList: Task[] = [];
+  taskDoneList: Task[] = [];
 
   title: string = '';
   description: string = '';
 
   ngOnInit(): void {
     this.todoService.getTask();
-    this.taskList = this.todoService.tasks;
-    this.taskInProgress = this.todoService.taskInProgress;
-    this.taskDone = this.todoService.taskDone;
+    this.taskNewList = this.todoService.tasks;
+    this.taskInProgressList = this.todoService.taskInProgress;
+    this.taskDoneList = this.todoService.taskDone;
   }
 
   ngAfterContentChecked(): void {
-    localStorage.setItem('retrievedTask', JSON.stringify(this.taskList));
+    localStorage.setItem(
+      'retrievedNewTaskList',
+      JSON.stringify(this.taskNewList)
+    );
     localStorage.setItem(
       'retrievedTaskInprogressList',
-      JSON.stringify(this.taskInProgress)
+      JSON.stringify(this.taskInProgressList)
     );
     localStorage.setItem(
       'retrievedDoneTaskList',
-      JSON.stringify(this.taskDone)
+      JSON.stringify(this.taskDoneList)
     );
   }
 
-  drop(event: CdkDragDrop<ITask[]>) {
+  drop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,

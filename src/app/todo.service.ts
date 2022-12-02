@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { ITask } from './model/task';
+import { Task } from './model/task';
 
 @Injectable({
   providedIn: 'root',
@@ -8,43 +8,61 @@ import { ITask } from './model/task';
 export class TodoService implements OnInit {
   ngOnInit(): void {}
 
-  tasks: ITask[] = [];
+  tasks: Task[] = [];
+  taskInProgress: Task[] = [];
+  taskDone: Task[] = [];
 
-  // retrievedInprogressTask: any = localStorage.getItem('InprogressTask');
-
-  taskInProgress: ITask[] = [];
-
-  taskDone: ITask[] = [
-    {
-      title: 'DoneTask Title',
-      description: 'This is just a test description for this DoneTask',
-      done: false,
-    },
-  ];
   updatedIndex!: any;
   editMode = false;
-  todoChanges = new Subject<ITask[]>();
+  todoChanges = new Subject<Task[]>();
 
   getTask() {
-    let retrievedTask: any = localStorage.getItem('retrievedTask');
-    let taskInprogressList: any = localStorage.getItem(
+    let retrievedTask: any = localStorage.getItem('retrievedNewTaskList');
+    let retrievedTaskInprogressList: any = localStorage.getItem(
       'retrievedTaskInprogressList'
     );
     let retrievedDoneTask: any = localStorage.getItem('retrievedDoneTaskList');
-
     this.tasks = JSON.parse(retrievedTask);
-    this.taskInProgress = JSON.parse(taskInprogressList);
+    this.taskInProgress = JSON.parse(retrievedTaskInprogressList);
     this.taskDone = JSON.parse(retrievedDoneTask);
     return this.tasks;
   }
 
-  onAddTask(title: string, description: string, done: boolean) {
+  getListName() {}
+
+  onAddTask(
+    listName: string = 'newTask',
+    title: string,
+    description: string,
+    done: boolean
+  ) {
+    //  (listName === 'newTask')
     this.tasks.push({
       title: title,
       description: description,
-      done: done,
+      done: false,
     });
-    localStorage.setItem('retrievedTask', JSON.stringify(this.tasks));
+    localStorage.setItem('newTask', JSON.stringify(this.tasks));
+
+    // if (listName === 'inprogressTask') {
+    //   this.taskInProgress.push({
+    //     title: title,
+    //     description: description,
+    //     done: false,
+    //   });
+    //   localStorage.setItem(
+    //     'inprogressTask',
+    //     JSON.stringify(this.taskInProgress)
+    //   );
+    // }
+    // if (listName === 'doneTask') {
+    //   this.taskDone.push({
+    //     title: title,
+    //     description: description,
+    //     done: done,
+    //   });
+    //   localStorage.setItem('doneTask', JSON.stringify(this.taskDone));
+    // }
   }
 
   onDeleteTodo(i: number) {
@@ -59,7 +77,7 @@ export class TodoService implements OnInit {
     this.taskDone.splice(i, 1);
   }
 
-  onEditTodo(item: ITask, i: number) {
+  onEditTodo(item: Task, i: number) {
     this.tasks[i].title = item.title;
     this.tasks[i].description = item.description;
     this.updatedIndex = i;
@@ -68,14 +86,14 @@ export class TodoService implements OnInit {
     localStorage.setItem('title', JSON.stringify(this.tasks[i].title));
   }
 
-  onEditInprogressTodo(item: ITask, i: number) {
+  onEditInprogressTodo(item: Task, i: number) {
     this.taskInProgress[i].description = item.description;
     this.updatedIndex = i;
     this.editMode = true;
     this.todoChanges.next(this.taskInProgress.slice());
   }
 
-  onEditDoneTodo(item: ITask, i: number) {
+  onEditDoneTodo(item: Task, i: number) {
     this.taskDone[i].description = item.description;
     this.updatedIndex = i;
     this.editMode = true;

@@ -4,9 +4,9 @@
   <div cdkDropListGroup class="row">
     <div class=" list col-md-4">
       <h2>TO DO</h2>
-      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskList" class="example-list"
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskNewList" class="example-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box row" *ngFor="let item of taskList; let i = index" cdkDrag>
+        <div class="example-box row" *ngFor="let item of taskNewList; let i = index" cdkDrag>
           <div class="col-md-9">
             <h2>{{item.title}}</h2>
             <p>{{item.description}}</p>
@@ -21,15 +21,14 @@
           </div>
         </div>
       </div>
-      <app-add-todo class="add-todo"></app-add-todo>
-
+      <app-add-todo class="add-todo" listNameHero=taskList></app-add-todo>
     </div>
 
     <div class=" inprogress-list col-md-4">
       <h2>IN PROGRESS</h2>
-      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskInProgress" class="example-list"
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskInProgressList" class="example-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box row" *ngFor="let item of taskInProgress; let i = index" cdkDrag>
+        <div class="example-box row" *ngFor="let item of taskInProgressList; let i = index" cdkDrag>
           <div class="col-md-9">
             <h2>{{item.title}}</h2>
             {{item.description}}
@@ -44,14 +43,14 @@
           </div>
         </div>
       </div>
-      <app-add-todo class="add-todo"></app-add-todo>
-
+      <app-add-todo class="add-todo" listNameHero=taskInProgress></app-add-todo>
     </div>
+
     <div class=" list col-md-4">
       <h2>Done</h2>
-      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskDone" class="example-list"
+      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskDoneList" class="example-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box row" *ngFor="let item of taskDone; let i = index" cdkDrag>
+        <div class="example-box row" *ngFor="let item of taskDoneList; let i = index" cdkDrag>
           <div class="col-md-9">
             <h2>{{item.title}}</h2>
             {{item.description}}

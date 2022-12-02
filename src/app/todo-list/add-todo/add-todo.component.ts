@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -15,6 +15,7 @@ import { TodoService } from '../../todo.service';
 export class AddTaskComponent implements OnInit {
   todoForm: FormGroup;
   editMode = false;
+  @Input() listNameHero: any;
 
   constructor(private todoService: TodoService, private fb: FormBuilder) {
     this.todoForm = this.fb.group({
@@ -23,7 +24,9 @@ export class AddTaskComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.listNameHero);
+  }
 
   onAddTask() {
     if (
@@ -31,6 +34,7 @@ export class AddTaskComponent implements OnInit {
       this.todoForm.value.description.length > 1
     ) {
       this.todoService.onAddTask(
+        'doneTask',
         this.todoForm.value.title,
         this.todoForm.value.description,
         false
