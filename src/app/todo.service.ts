@@ -32,6 +32,7 @@ export class TodoService {
     return this.columns;
   }
   createCol(title: string) {
+    this.columns = this.columns || [];
     this.columns.push({
       id: Math.random().toString(),
       title,
