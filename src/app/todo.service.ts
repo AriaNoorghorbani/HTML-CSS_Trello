@@ -2,11 +2,21 @@ import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Task } from './model/task';
 
+export type IColumn = {
+  id: string;
+  title: string;
+  tasks: Task[];
+};
+
 @Injectable({
   providedIn: 'root',
 })
-export class TodoService implements OnInit {
-  ngOnInit(): void {}
+export class TodoService {
+  columns: IColumn[];
+
+  constructor() {
+    this.columns = [];
+  }
 
   tasks: Task[] = [];
   taskInProgress: Task[] = [];
@@ -15,6 +25,38 @@ export class TodoService implements OnInit {
   updatedIndex!: any;
   editMode = false;
   todoChanges = new Subject<Task[]>();
+
+  fetchTasks(): IColumn[] {
+    let retrievedColumns: any = localStorage.getItem('columns');
+    this.columns = JSON.parse(retrievedColumns);
+    return this.columns;
+  }
+  createCol(title: string) {
+    this.columns.push({
+      id: Math.random().toString(),
+      title,
+      tasks: [],
+    });
+    localStorage.setItem('columns', JSON.stringify(this.columns));
+  }
+  editCol(id: string, title: string) {
+    const col = this.columns.find((i) => i.id == id);
+    if (!col) throw Error('can not find the specified column');
+    col.title = title;
+    return col;
+  }
+  removeCol(id: string) {
+    const idx = this.columns.findIndex((i) => i.id == id);
+    this.columns.splice(idx, 1);
+  }
+  addTaskToCol(id: string, task: Task) {
+    const col = this.columns.find((i) => i.id == id);
+    if (!col) throw Error('can not find the specified column');
+    col.tasks.push(task);
+    return col;
+  }
+  editTaskTocCol(id: string, task: Task) {}
+  removeTaskTocCol(id: string, taskId: string) {}
 
   getTask() {
     let retrievedTask: any = localStorage.getItem('retrievedNewTaskList');
@@ -25,6 +67,9 @@ export class TodoService implements OnInit {
     this.tasks = JSON.parse(retrievedTask);
     this.taskInProgress = JSON.parse(retrievedTaskInprogressList);
     this.taskDone = JSON.parse(retrievedDoneTask);
+
+    console.log(this.columns);
+
     return this.tasks;
   }
 

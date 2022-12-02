@@ -1,0 +1,21 @@
+<div class=" list">
+  <h2>{{col.title}}</h2>
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div class="example-box row" *ngFor="let item of col.tasks; let i = index" cdkDrag>
+      <div class="col-md-9">
+        <h2>{{item.title}}</h2>
+        <p>{{item.description}}</p>
+      </div>
+      <div class="col-md-3">
+        <button mat-icon-button type=button (click)="deleteTodoTaskConfirm(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onEditTask(i)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-add-todo class="add-todo" [colId]="col.id"></app-add-todo>
+</div>

@@ -9,6 +9,7 @@ import { EditDialogComponent } from './task-edit-dialog/task-edit-dialog.compone
 import { Task } from '../model/task';
 import { TodoService } from '../todo.service';
 import { DeleteDialogComponent } from './task-delete-dialog/task-delete-dialog.component';
+import { IColumn } from '../todo.service';
 
 export interface DialogData {
   title: string;
@@ -32,6 +33,7 @@ export class TodoComponent implements OnInit, AfterContentChecked {
   taskNewList: Task[] = [];
   taskInProgressList: Task[] = [];
   taskDoneList: Task[] = [];
+  columns: IColumn[] = [];
 
   title: string = '';
   description: string = '';
@@ -41,6 +43,9 @@ export class TodoComponent implements OnInit, AfterContentChecked {
     this.taskNewList = this.todoService.tasks;
     this.taskInProgressList = this.todoService.taskInProgress;
     this.taskDoneList = this.todoService.taskDone;
+    this.columns = this.todoService.columns;
+    console.log(this.columns);
+    console.log('this.columns');
   }
 
   ngAfterContentChecked(): void {
@@ -58,42 +63,8 @@ export class TodoComponent implements OnInit, AfterContentChecked {
     );
   }
 
-  drop(event: CdkDragDrop<Task[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
-  }
-
   onDeleteInprogress(i: number) {
     this.todoService.onDeleteInProgressTodo(i);
-  }
-
-  deleteTodoTaskConfirm(i: number) {
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      width: '250px',
-      data: { description: this.description, title: this.title },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result === true) {
-        this.todoService.onDeleteTodo(i);
-      }
-      console.log('The dialog was closed');
-      this.title = result.title;
-      this.description = result.description;
-      console.log(result);
-    });
   }
 
   deleteInprogressTaskConfirm(i: number) {
@@ -129,33 +100,6 @@ export class TodoComponent implements OnInit, AfterContentChecked {
       this.title = result.title;
       this.description = result.description;
       console.log(result);
-    });
-  }
-
-  onEditTask(i: number): void {
-    this.title = '';
-    this.description = '';
-    const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '250px',
-      data: { description: this.description, title: this.title },
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (!result) return;
-
-      if (result.title.length > 1 && result.description.length > 1) {
-        console.log('The dialog was closed');
-        this.title = result.title;
-        this.description = result.description;
-        console.log(result);
-        this.todoService.onEditTodo(
-          {
-            title: result.title,
-            description: result.description,
-          },
-          i
-        );
-      }
     });
   }
 

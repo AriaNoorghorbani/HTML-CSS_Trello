@@ -21,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dialog.component';
 import { DeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
+import { TasksColumnComponent } from './tasks-column/tasks-column.component';
+import { ColumnsComponent } from './columns/columns.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { DeleteDialogComponent } from './todo-list/task-delete-dialog/task-delet
     AddTaskComponent,
     EditDialogComponent,
     DeleteDialogComponent,
+    TasksColumnComponent,
+    ColumnsComponent,
   ],
   imports: [
     BrowserModule,

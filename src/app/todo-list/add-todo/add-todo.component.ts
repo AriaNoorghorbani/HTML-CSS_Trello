@@ -10,7 +10,7 @@ import { TodoService } from '../../todo.service';
 export class AddTaskComponent implements OnInit {
   todoForm: FormGroup;
   editMode = false;
-  @Input() listName: any;
+  @Input() colId!: string;
 
   constructor(private todoService: TodoService, private fb: FormBuilder) {
     this.todoForm = this.fb.group({
@@ -19,23 +19,23 @@ export class AddTaskComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    console.log(this.listName);
-  }
+  ngOnInit(): void {}
 
   onAddTask() {
-    if (
-      this.todoForm.value.title.length > 1 &&
-      this.todoForm.value.description.length > 1
-    ) {
-      this.todoService.onAddTask(
-        this.listName,
-        this.todoForm.value.title,
-        this.todoForm.value.description,
-        false
-      );
-      this.todoForm.reset();
-    }
+    debugger;
+    this.todoService.addTaskToCol(this.colId, this.todoForm.value);
+    // if (
+    //   this.todoForm.value.title.length > 1 &&
+    //   this.todoForm.value.description.length > 1
+    // ) {
+    //   this.todoService.onAddTask(
+    //     this.listName,
+    //     this.todoForm.value.title,
+    //     this.todoForm.value.description,
+    //     false
+    //   );
+    //   this.todoForm.reset();
+    // }
   }
 
   isEditMode() {

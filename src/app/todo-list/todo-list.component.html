@@ -2,72 +2,16 @@
 <button (click)="onSaveInprogressList(taskList)">Save inProgress List</button> -->
 <div class="todo-list">
   <div cdkDropListGroup class="row">
-    <div class=" list col-md-4">
-      <h2>TO DO</h2>
-      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskNewList" class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box row" *ngFor="let item of taskNewList; let i = index" cdkDrag>
-          <div class="col-md-9">
-            <h2>{{item.title}}</h2>
-            <p>{{item.description}}</p>
-          </div>
-          <div class="col-md-3">
-            <button mat-icon-button type=button (click)="deleteTodoTaskConfirm(i)">
-              <mat-icon>delete</mat-icon>
-            </button>
-            <button mat-icon-button (click)="onEditTask(i)">
-              <mat-icon>edit</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-      <app-add-todo class="add-todo" listName=New></app-add-todo>
+    <!-- <div class="col-md-4">
+      <app-tasks-column title="TO DO" [tasks]="taskNewList"></app-tasks-column>
     </div>
-
-    <div class=" inprogress-list col-md-4">
-      <h2>IN PROGRESS</h2>
-      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskInProgressList" class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box row" *ngFor="let item of taskInProgressList; let i = index" cdkDrag>
-          <div class="col-md-9">
-            <h2>{{item.title}}</h2>
-            {{item.description}}
-          </div>
-          <div class="col-md-3">
-            <button mat-icon-button type=button (click)="deleteInprogressTaskConfirm(i)">
-              <mat-icon>delete</mat-icon>
-            </button>
-            <button mat-icon-button (click)="onEditInprogressTask(i)">
-              <mat-icon>edit</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-      <app-add-todo class="add-todo" listName='In progress'></app-add-todo>
+    <div class="col-md-4">
+      <app-tasks-column title="IN PROGRESS" [tasks]="taskInProgressList">
+      </app-tasks-column>
     </div>
-
-    <div class=" list col-md-4">
-      <h2>Done</h2>
-      <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="taskDoneList" class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box row" *ngFor="let item of taskDoneList; let i = index" cdkDrag>
-          <div class="col-md-9">
-            <h2>{{item.title}}</h2>
-            {{item.description}}
-          </div>
-          <div class="col-md-3">
-            <button mat-icon-button type=button (click)="deleteDoneTaskConfirm(i)">
-              <mat-icon>delete</mat-icon>
-            </button>
-            <button mat-icon-button (click)="onEditDoneTask(i)">
-              <mat-icon>edit</mat-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-      <app-add-todo class="add-todo" listName=Done></app-add-todo>
-    </div>
-
+    <div class="col-md-4">
+      <app-tasks-column title="Done" [tasks]="taskDoneList"></app-tasks-column>
+    </div> -->
 
     <div *ngIf="title">
       You chose: <i>{{title}}
@@ -77,3 +21,5 @@
       You chose: <i>{{description}}
       </i>
     </div>
+  </div>
+</div>
