@@ -16,6 +16,6 @@
       </div>
     </mat-card>
     <button *ngIf="editMode === false" mat-raised-button class="add-btn" style="font-size: 20px" (click)="onAddTask()">+
-      Add Task</button>
+      Add {{listName}} Task</button>
     <button *ngIf="editMode === true" mat-raised-button class="add-btn" (click)="onAddTask()">edit</button>
   </div>

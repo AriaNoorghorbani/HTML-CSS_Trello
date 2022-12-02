@@ -1,10 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TodoService } from '../../todo.service';
 
 @Component({
@@ -15,7 +10,7 @@ import { TodoService } from '../../todo.service';
 export class AddTaskComponent implements OnInit {
   todoForm: FormGroup;
   editMode = false;
-  @Input() listNameHero: any;
+  @Input() listName: any;
 
   constructor(private todoService: TodoService, private fb: FormBuilder) {
     this.todoForm = this.fb.group({
@@ -25,7 +20,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.listNameHero);
+    console.log(this.listName);
   }
 
   onAddTask() {
@@ -34,7 +29,7 @@ export class AddTaskComponent implements OnInit {
       this.todoForm.value.description.length > 1
     ) {
       this.todoService.onAddTask(
-        'doneTask',
+        this.listName,
         this.todoForm.value.title,
         this.todoForm.value.description,
         false

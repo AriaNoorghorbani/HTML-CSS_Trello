@@ -31,37 +31,71 @@ export class TodoService implements OnInit {
   getListName() {}
 
   onAddTask(
-    listName: string = 'newTask',
+    listName: string,
     title: string,
     description: string,
     done: boolean
   ) {
-    //  (listName === 'newTask')
-    this.tasks.push({
-      title: title,
-      description: description,
-      done: false,
-    });
-    localStorage.setItem('newTask', JSON.stringify(this.tasks));
+    if (listName === 'New') {
+      this.tasks.push({
+        title: title,
+        description: description,
+        done: false,
+      });
+      localStorage.setItem('retrievedNewTaskList', JSON.stringify(this.tasks));
+    }
 
-    // if (listName === 'inprogressTask') {
-    //   this.taskInProgress.push({
-    //     title: title,
-    //     description: description,
-    //     done: false,
-    //   });
-    //   localStorage.setItem(
-    //     'inprogressTask',
-    //     JSON.stringify(this.taskInProgress)
-    //   );
-    // }
-    // if (listName === 'doneTask') {
-    //   this.taskDone.push({
-    //     title: title,
-    //     description: description,
-    //     done: done,
-    //   });
-    //   localStorage.setItem('doneTask', JSON.stringify(this.taskDone));
+    if (listName === 'In progress') {
+      this.taskInProgress.push({
+        title: title,
+        description: description,
+        done: false,
+      });
+      localStorage.setItem(
+        'retrievedTaskInprogressList',
+        JSON.stringify(this.taskInProgress)
+      );
+    }
+    if (listName === 'Done') {
+      this.taskDone.push({
+        title: title,
+        description: description,
+        done: done,
+      });
+      localStorage.setItem(
+        'retrievedDoneTaskList',
+        JSON.stringify(this.taskDone)
+      );
+    }
+
+    // switch (listName) {
+    //   case 'newTask': {
+    //     this.tasks.push({
+    //       title: title,
+    //       description: description,
+    //       done: false,
+    //     });
+    //     break;
+    //   }
+    //   case 'inprogressTask': {
+    //     this.taskInProgress.push({
+    //       title: title,
+    //       description: description,
+    //       done: false,
+    //     });
+    //     break;
+    //   }
+    //   case 'doneTask': {
+    //     this.taskDone.push({
+    //       title: title,
+    //       description: description,
+    //       done: false,
+    //     });
+    //     break;
+    //   }
+    //   default: {
+    //     break;
+    //   }
     // }
   }
 
