@@ -13,11 +13,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AddTaskComponent } from './add-todo/add-todo.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AddTaskComponent } from './todo-list/add-todo/add-todo.component';
 import { TodoComponent } from './todo-list/todo-list.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dialog.component';
+import { DeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     TodoComponent,
     AddTaskComponent,
     EditDialogComponent,
+    DeleteDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,10 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     MatInputModule,
     MatButtonModule,
     DragDropModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule,
+    MatNativeDateModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

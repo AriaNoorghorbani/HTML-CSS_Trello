@@ -5,7 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { TodoService } from '../todo.service';
+import { TodoService } from '../../todo.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -26,12 +26,17 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddTask() {
-    this.todoService.onAddTask(
-      this.todoForm.value.title,
-      this.todoForm.value.description,
-      false
-    );
-    this.todoForm.reset();
+    if (
+      this.todoForm.value.title.length > 1 &&
+      this.todoForm.value.description.length > 1
+    ) {
+      this.todoService.onAddTask(
+        this.todoForm.value.title,
+        this.todoForm.value.description,
+        false
+      );
+      this.todoForm.reset();
+    }
   }
 
   isEditMode() {

@@ -1,0 +1,16 @@
+<div mat-dialog-content>
+  <p>Please enter your updated task</p>
+  <mat-form-field appearance="fill">
+    <mat-label>title</mat-label>
+    <input matInput [(ngModel)]="task.title">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>description</mat-label>
+    <input matInput [(ngModel)]="task.description">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="task" cdkFocusInitial>Ok</button>
+</div>
