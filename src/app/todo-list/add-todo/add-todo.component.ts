@@ -24,6 +24,8 @@ export class AddTaskComponent implements OnInit {
   onAddTask() {
     debugger;
     this.todoService.addTaskToCol(this.colId, this.todoForm.value);
+    console.log(this.colId, this.todoForm.value);
+
     // if (
     //   this.todoForm.value.title.length > 1 &&
     //   this.todoForm.value.description.length > 1

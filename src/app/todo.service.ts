@@ -52,10 +52,20 @@ export class TodoService {
   }
   addTaskToCol(id: string, task: Task) {
     const col = this.columns.find((i) => i.id == id);
+    let colId = col?.id;
+    console.log(id);
+    console.log(colId);
+    console.log(col);
+    console.log(task);
+
     if (!col) throw Error('can not find the specified column');
     col.tasks.push(task);
+
+    localStorage.setItem(col.id, JSON.stringify(col));
+
     return col;
   }
+
   editTaskTocCol(id: string, task: Task) {}
   removeTaskTocCol(id: string, taskId: string) {}
 
