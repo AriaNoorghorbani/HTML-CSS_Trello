@@ -18,7 +18,5 @@ export class ColumnsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addNewCol() {
-    this.todoService.createCol('aria' + Math.random());
-  }
+
 }
