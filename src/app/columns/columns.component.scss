@@ -1,0 +1,17 @@
+.task-row {
+  // flex-direction: row;
+  // max-width: 400px;
+  // display: inline-block;
+  background-color: green;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+.container {
+  max-width: 350px;
+}
+* {
+  background-color: green;
+  // margin-right: 10px;
+}

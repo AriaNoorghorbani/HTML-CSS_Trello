@@ -1,8 +1,8 @@
 <button mat-raised-button color="primary" (click)="addNewCol()">new</button>
 
-<div class="todo-list">
-  <div cdkDropListGroup class="row">
-    <div class="col-md-4" *ngFor="let col of columns">
+<div class=" ">
+  <div cdkDropListGroup class="row nowrap">
+    <div class="col" *ngFor="let col of columns">
       <app-tasks-column [col]="col"></app-tasks-column>
     </div>
   </div>
