@@ -1,4 +1,4 @@
-<div class=" list">
+<div class="list">
   <h2>{{col.title}}</h2>
   <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="example-list"
     (cdkDropListDropped)="drop($event)">

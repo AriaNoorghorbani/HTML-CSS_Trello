@@ -15,17 +15,11 @@ import { IColumn, TodoService } from '../todo.service';
   templateUrl: './tasks-column.component.html',
   styleUrls: ['./tasks-column.component.scss'],
 })
-export class TasksColumnComponent implements OnInit {
+export class TasksColumnComponent {
   @Input()
   col!: IColumn;
 
   constructor(private todoService: TodoService, public dialog: MatDialog) {}
-
-  ngOnInit() {
-    // const fetch = this.todoService.fetchTasks();
-    // this.col.tasks.push(fetch);
-    console.log(fetch);
-  }
 
   deleteTaskConfirm(taskId: number) {
     const colId = this.col.id;
@@ -58,13 +52,6 @@ export class TasksColumnComponent implements OnInit {
       if (result.title.length > 1 && result.description.length > 1) {
         console.log('The dialog was closed');
         console.log(result);
-        // this.todoService.onEditTodo(
-        //   {
-        //     title: result.title,
-        //     description: result.description,
-        //   },
-        //   i
-        // );
       }
     });
   }

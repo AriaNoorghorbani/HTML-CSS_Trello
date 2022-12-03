@@ -1,5 +1,18 @@
 <mat-toolbar class="navbar fixed-top">
-  <span>Angular To-Do App</span>
-  <button class="new-column" mat-raised-button (click)="addNewCol()">+ New List</button>
-  <button mat-stroked-button class="new-column">Signup / Login</button>
+
+  <div class="container">
+
+    <div class="col">
+      Angular To-Do App
+    </div>
+
+    <div class="col-8">
+      <button class="new-column" mat-raised-button (click)="addNewCol()">+ New List</button>
+    </div>
+
+    <div class="col">
+      <button mat-stroked-button class="new-column">Signup / Login</button>
+    </div>
+  </div>
+
 </mat-toolbar>

@@ -23,24 +23,15 @@ export class AddTaskComponent implements OnInit {
 
   onAddTask() {
     debugger;
-    this.todoService.addTaskToCol(this.colId, this.todoForm.value);
-    console.log(this.colId, this.todoForm.value);
-
-    // if (
-    //   this.todoForm.value.title.length > 1 &&
-    //   this.todoForm.value.description.length > 1
-    // ) {
-    //   this.todoService.onAddTask(
-    //     this.listName,
-    //     this.todoForm.value.title,
-    //     this.todoForm.value.description,
-    //     false
-    //   );
-    //   this.todoForm.reset();
-    // }
-  }
-
-  isEditMode() {
-    // this.todoService.isEditMode();
+    if (
+      this.todoForm.value.title.length > 1 &&
+      this.todoForm.value.description.length > 1
+    ) {
+      this.todoService.addTaskToCol(this.colId, this.todoForm.value);
+      console.log(this.colId, this.todoForm.value);
+      this.todoForm.reset();
+    } else {
+      alert('Please input data for the task first');
+    }
   }
 }
