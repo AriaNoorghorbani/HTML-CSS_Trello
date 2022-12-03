@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Confirm } from '../todo-list.component';
+import { Confirm } from 'src/app/columns/columns.component';
 
 @Component({
   selector: 'app-task-delete-dialog',
@@ -19,5 +19,7 @@ export class DeleteDialogComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+    console.log(this.data);
+
   }
 }

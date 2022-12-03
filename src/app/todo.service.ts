@@ -86,5 +86,13 @@ export class TodoService {
 
     this.columns$.next(columns);
   }
-  removeTaskTocCol(id: string, taskId: string) {}
+  removeTaskOfcCol(columnId: string, taskId: number) {
+    const columns: IColumn[] = this.columns$.getValue();
+    const column = columns.find((i) => i.id == columnId);
+    if (!column) return;
+
+    // const taskIdx = column.tasks.findIndex((i) => i.id === taskId);
+    column.tasks.splice(taskId, 1);
+    this.columns$.next(columns);
+  }
 }

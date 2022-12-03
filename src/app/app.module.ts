@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddTaskComponent } from './todo-list/add-todo/add-todo.component';
-import { TodoComponent } from './todo-list/todo-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -23,17 +22,18 @@ import { EditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dial
 import { DeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
 import { TasksColumnComponent } from './tasks-column/tasks-column.component';
 import { ColumnsComponent } from './columns/columns.component';
+import { NewListComponent } from './todo-list/new-list-dialog/new-list-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TodoComponent,
     AddTaskComponent,
     EditDialogComponent,
     DeleteDialogComponent,
     TasksColumnComponent,
     ColumnsComponent,
+    NewListComponent,
   ],
   imports: [
     BrowserModule,

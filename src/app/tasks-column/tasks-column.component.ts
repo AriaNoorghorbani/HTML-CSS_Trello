@@ -27,16 +27,16 @@ export class TasksColumnComponent implements OnInit {
     console.log(fetch);
   }
 
-  deleteTodoTaskConfirm(i: number) {
-    const task = this.col.tasks[i];
+  deleteTaskConfirm(taskId: number) {
+    const colId = this.col.id;
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       width: '250px',
-      data: task,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result === true) {
-        // this.todoService.onDeleteTodo(i);
+        this.todoService.removeTaskOfcCol(colId, taskId);
+        console.log(result);
       }
     });
   }

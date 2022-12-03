@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { IColumn, TodoService } from '../todo.service';
 
+export interface DialogData {
+  title: string;
+  description: string;
+}
+export interface Confirm {
+  yes: boolean;
+  no: boolean;
+}
 @Component({
   selector: 'app-columns',
   templateUrl: './columns.component.html',
@@ -17,6 +25,4 @@ export class ColumnsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-
 }
