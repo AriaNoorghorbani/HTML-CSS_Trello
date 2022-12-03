@@ -21,7 +21,11 @@ export class TasksColumnComponent implements OnInit {
 
   constructor(private todoService: TodoService, public dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    // const fetch = this.todoService.fetchTasks();
+    // this.col.tasks.push(fetch);
+    console.log(fetch);
+  }
 
   deleteTodoTaskConfirm(i: number) {
     const task = this.col.tasks[i];
@@ -32,15 +36,20 @@ export class TasksColumnComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result === true) {
-        this.todoService.onDeleteTodo(i);
+        // this.todoService.onDeleteTodo(i);
       }
     });
   }
 
   onEditTask(i: number): void {
+    debugger;
+    const task = this.col.tasks[i];
     const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '250px',
-      data: this.col.tasks[i],
+      data: {
+        colId: this.col.id,
+        task: { ...task },
+      },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -49,13 +58,13 @@ export class TasksColumnComponent implements OnInit {
       if (result.title.length > 1 && result.description.length > 1) {
         console.log('The dialog was closed');
         console.log(result);
-        this.todoService.onEditTodo(
-          {
-            title: result.title,
-            description: result.description,
-          },
-          i
-        );
+        // this.todoService.onEditTodo(
+        //   {
+        //     title: result.title,
+        //     description: result.description,
+        //   },
+        //   i
+        // );
       }
     });
   }
@@ -75,5 +84,6 @@ export class TasksColumnComponent implements OnInit {
         event.currentIndex
       );
     }
+    this.todoService.saveData();
   }
 }

@@ -2,15 +2,15 @@
   <p>Please enter your updated task</p>
   <mat-form-field appearance="fill">
     <mat-label>title</mat-label>
-    <input matInput [(ngModel)]="task.title">
+    <input matInput [(ngModel)]="data.task.title">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>description</mat-label>
-    <input matInput [(ngModel)]="task.description">
+    <input matInput [(ngModel)]="data.task.description">
   </mat-form-field>
 
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button [mat-dialog-close]="task" cdkFocusInitial>Ok</button>
+  <button mat-button (click)="onSave()" cdkFocusInitial>Ok</button>
 </div>

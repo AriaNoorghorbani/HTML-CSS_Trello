@@ -41,6 +41,6 @@ export class AddTaskComponent implements OnInit {
   }
 
   isEditMode() {
-    this.todoService.isEditMode();
+    // this.todoService.isEditMode();
   }
 }

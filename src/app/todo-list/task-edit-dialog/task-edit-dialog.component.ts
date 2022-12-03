@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData } from '../todo-list.component';
+import { Task } from 'src/app/interface/task.model';
+import { TodoService } from 'src/app/todo.service';
 
 @Component({
   selector: 'app-task-edit-dialog',
@@ -10,12 +11,16 @@ import { DialogData } from '../todo-list.component';
 export class EditDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public task: DialogData
+    @Inject(MAT_DIALOG_DATA) public data: { colId: string; task: Task },
+    public todoService: TodoService
   ) {}
 
   ngOnInit(): void {}
 
-  onSave() {}
+  onSave() {
+    this.todoService.editTaskTocCol(this.data.colId, this.data.task);
+    this.dialogRef.close();
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
