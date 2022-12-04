@@ -46,6 +46,7 @@ export class TasksColumnComponent {
       },
     });
 
+<<<<<<< HEAD
     dialogRef.afterClosed().subscribe((result) => {
       if (!result) return;
 
@@ -54,6 +55,9 @@ export class TasksColumnComponent {
         console.log(result);
       }
     });
+=======
+    dialogRef.afterClosed();
+>>>>>>> parent of 7e36694 (Revert "update")
   }
 
   drop(event: CdkDragDrop<Task[]>) {
@@ -77,4 +81,17 @@ export class TasksColumnComponent {
   onRemoveColumn(colId: IColumn) {
     this.todoService.removeColumn(colId);
   }
+<<<<<<< HEAD
+=======
+
+  onEditColumn(col: IColumn) {
+    const columns = this.todoService.columns$.getValue();
+    const column = columns.find((i) => i.id == col.id);
+    console.log(column);
+    const dialogRef = this.dialog.open(ColumnEditDialogComponent, {
+      data: { colId: column?.id, colTitle: column?.title },
+    });
+    dialogRef.afterClosed();
+  }
+>>>>>>> parent of 7e36694 (Revert "update")
 }
