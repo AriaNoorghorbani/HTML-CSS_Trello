@@ -1,5 +1,15 @@
-<div class="list">
-  <h2>{{col.title}}</h2>
+<div>
+  <div class="container ">
+    <div>
+      <h2 id="left">{{col.title}}</h2>
+    </div>
+    <div class="mydivouter">
+      <button mat-button id="right" class="mybuttonoverlap btn btn-info">
+        <i class="fa-sharp fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+
   <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="example-list"
     (cdkDropListDropped)="drop($event)">
     <div class="box row" *ngFor="let item of col.tasks; let i = index" cdkDrag>
@@ -16,6 +26,6 @@
         </button>
       </div>
     </div>
-    <app-add-todo class="add-todo" [colId]="col.id"></app-add-todo>
   </div>
+  <app-add-todo class="add-todo" [colId]="col.id"></app-add-todo>
 </div>
