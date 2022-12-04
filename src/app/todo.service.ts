@@ -88,7 +88,7 @@ export class TodoService {
   }
 
   removeColumn(columnsId: IColumn) {
-    const columns: any[] = this.columns$.getValue();
+    const columns: IColumn[] = this.columns$.getValue();
     console.log(columns);
 
     const column = columns.findIndex((i) => i.id == columnsId.id);
