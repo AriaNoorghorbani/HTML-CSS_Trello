@@ -48,6 +48,14 @@ export class TasksColumnComponent {
     });
 
     dialogRef.afterClosed();
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   if (!result) return;
+
+    //   if (result.title.length > 1 && result.description.length > 1) {
+    //     console.log('The dialog was closed');
+    //     console.log(result);
+    //   }
+    // });
   }
 
   drop(event: CdkDragDrop<Task[]>) {
@@ -74,11 +82,29 @@ export class TasksColumnComponent {
 
   onEditColumn(col: IColumn) {
     const columns = this.todoService.columns$.getValue();
+    // console.log(columns);
+
     const column = columns.find((i) => i.id == col.id);
-    console.log(column);
+    // console.log(column?.id);
+
+    const colIndex = columns.findIndex((i) => i.id == column?.id);
+    // console.log(colIndex);
+
     const dialogRef = this.dialog.open(ColumnEditDialogComponent, {
-      data: { colId: column?.id, colTitle: column?.title },
+      data: { colId: column?.id, colTitle: column?.title, colIdx: colIndex },
     });
+    // console.log(columns);
+    // console.log(column);
+    // console.log(colIndex);
     dialogRef.afterClosed();
+
+    // const column = this.col.id;
+    // const colTitle = this.col.title;
+    // const dialogRef = this.dialog.open(ColumnEditDialogComponent, {
+    //   data: { column, colTitle: colTitle },
+    // });
+    // dialogRef.afterClosed();
+
+    // this.todoService.editColumn(colId);
   }
 }
