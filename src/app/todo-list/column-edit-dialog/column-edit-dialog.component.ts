@@ -12,19 +12,14 @@ export class ColumnEditDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<ColumnEditDialogComponent>,
     @Inject(MAT_DIALOG_DATA)
-    public data: { colId: string; colTitle: string; colIdx: number },
+    public data: { colId: string; colTitle: string },
     public todoService: TodoService
   ) {}
 
   ngOnInit(): void {}
 
   onSave() {
-    this.todoService.editCol(
-      this.data.colId,
-      this.data.colTitle,
-      this.data.colIdx
-    );
-    // console.log(this.data.colIdx);
+    this.todoService.editCol(this.data.colId, this.data.colTitle);
 
     this.dialogRef.close();
   }

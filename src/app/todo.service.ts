@@ -50,11 +50,11 @@ export class TodoService {
     localStorage.setItem(LS_KEY, JSON.stringify(columns));
   }
 
-  editCol(getColumn: string, colTitle: string, colIdx: number) {
+  editCol(getColumn: string, receivedTitle: string) {
     const columns: IColumn[] = this.columns$.getValue();
     const column = columns.findIndex((i) => i.id == getColumn);
     if (!column) throw Error('can not find the specified column');
-    columns[column].title = colTitle;
+    columns[column].title = receivedTitle;
     this.columns$.next(columns);
   }
 
@@ -84,13 +84,6 @@ export class TodoService {
     this.columns$.next(columns);
   }
 
-  // editColumn(columnsId: IColumn) {
-  //   const columns: IColumn[] = this.columns$.getValue();
-  //   const column = columns.findIndex((i) => (i.id = columnsId.id));
-  //   console.log(columns);
-  //   console.log(column);
-  // }
-
   removeColumn(columnsId: IColumn) {
     const columns: IColumn[] = this.columns$.getValue();
     console.log(columns);
@@ -106,8 +99,6 @@ export class TodoService {
     const columns: IColumn[] = this.columns$.getValue();
     const column = columns.find((i) => i.id == columnId);
     if (!column) return;
-
-    // const taskIdx = column.tasks.findIndex((i) => i.id === taskId);
     column.tasks.splice(taskId, 1);
     this.columns$.next(columns);
   }
