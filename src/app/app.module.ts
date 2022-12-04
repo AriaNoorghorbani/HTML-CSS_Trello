@@ -18,22 +18,24 @@ import { AddTaskComponent } from './todo-list/add-todo/add-todo.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
-import { EditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dialog.component';
+import { TaskEditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dialog.component';
 import { DeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
 import { TasksColumnComponent } from './tasks-column/tasks-column.component';
 import { ColumnsComponent } from './columns/columns.component';
 import { NewListComponent } from './todo-list/new-list-dialog/new-list-dialog.component';
+import { ColumnEditDialogComponent } from './todo-list/column-edit-dialog/column-edit-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AddTaskComponent,
-    EditDialogComponent,
+    TaskEditDialogComponent,
     DeleteDialogComponent,
     TasksColumnComponent,
     ColumnsComponent,
     NewListComponent,
+    ColumnEditDialogComponent,
   ],
   imports: [
     BrowserModule,

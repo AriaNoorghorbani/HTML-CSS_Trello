@@ -6,8 +6,9 @@ import {
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Task } from '../model/task';
+import { ColumnEditDialogComponent } from '../todo-list/column-edit-dialog/column-edit-dialog.component';
 import { DeleteDialogComponent } from '../todo-list/task-delete-dialog/task-delete-dialog.component';
-import { EditDialogComponent } from '../todo-list/task-edit-dialog/task-edit-dialog.component';
+import { TaskEditDialogComponent } from '../todo-list/task-edit-dialog/task-edit-dialog.component';
 import { IColumn, TodoService } from '../todo.service';
 
 @Component({
@@ -38,7 +39,7 @@ export class TasksColumnComponent {
   onEditTask(i: number): void {
     debugger;
     const task = this.col.tasks[i];
-    const dialogRef = this.dialog.open(EditDialogComponent, {
+    const dialogRef = this.dialog.open(TaskEditDialogComponent, {
       width: '250px',
       data: {
         colId: this.col.id,
@@ -46,14 +47,15 @@ export class TasksColumnComponent {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (!result) return;
+    dialogRef.afterClosed();
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   if (!result) return;
 
-      if (result.title.length > 1 && result.description.length > 1) {
-        console.log('The dialog was closed');
-        console.log(result);
-      }
-    });
+    //   if (result.title.length > 1 && result.description.length > 1) {
+    //     console.log('The dialog was closed');
+    //     console.log(result);
+    //   }
+    // });
   }
 
   drop(event: CdkDragDrop<Task[]>) {
@@ -78,7 +80,31 @@ export class TasksColumnComponent {
     this.todoService.removeColumn(colId);
   }
 
-  onEditColumn(colId: IColumn) {
-    this.todoService.editColumn(colId);
+  onEditColumn(col: IColumn) {
+    const columns = this.todoService.columns$.getValue();
+    // console.log(columns);
+
+    const column = columns.find((i) => i.id == col.id);
+    // console.log(column?.id);
+
+    const colIndex = columns.findIndex((i) => i.id == column?.id);
+    // console.log(colIndex);
+
+    const dialogRef = this.dialog.open(ColumnEditDialogComponent, {
+      data: { colId: column?.id, colTitle: column?.title, colIdx: colIndex },
+    });
+    // console.log(columns);
+    // console.log(column);
+    // console.log(colIndex);
+    dialogRef.afterClosed();
+
+    // const column = this.col.id;
+    // const colTitle = this.col.title;
+    // const dialogRef = this.dialog.open(ColumnEditDialogComponent, {
+    //   data: { column, colTitle: colTitle },
+    // });
+    // dialogRef.afterClosed();
+
+    // this.todoService.editColumn(colId);
   }
 }
