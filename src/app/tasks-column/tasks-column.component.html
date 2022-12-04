@@ -1,14 +1,11 @@
 <div>
   <div class="container ">
     <div>
-      <h2 id="right-title">{{col.title}}</h2>
+      <h2 id="left">{{col.title}}</h2>
     </div>
     <div class="mydivouter">
       <button mat-button id="right" class="mybuttonoverlap btn btn-info" (click)="onRemoveColumn(col)">
-        <mat-icon>delete</mat-icon>
-      </button>
-      <button mat-button id="left" class="mybuttonoverlap btn btn-info" (click)="onEditColumn(col)">
-        <mat-icon>edit</mat-icon>
+        <i class="fa-sharp fa-solid fa-trash"></i>
       </button>
     </div>
   </div>
