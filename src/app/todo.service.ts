@@ -50,26 +50,14 @@ export class TodoService {
     localStorage.setItem(LS_KEY, JSON.stringify(columns));
   }
 
-<<<<<<< HEAD
-  editCol(id: string, title: string) {
-    // const columns: IColumn[] = this.columns$.getValue();
-    // const col = this.columns$.find((i) => i.id == id);
-    // if (!col) throw Error('can not find the specified column');
-    // col.title = title;
-    // return col;
-  }
-  removeCol(id: string) {
-    // const idx = this.columns$.findIndex((i) => i.id == id);
-    // this.columns$.splice(idx, 1);
-=======
-  editCol(getColumn: string, receivedTitle: string) {
+  editCol(getColumn: string, colTitle: string, colIdx: number) {
     const columns: IColumn[] = this.columns$.getValue();
     const column = columns.findIndex((i) => i.id == getColumn);
     if (!column) throw Error('can not find the specified column');
-    columns[column].title = receivedTitle;
+    columns[column].title = colTitle;
     this.columns$.next(columns);
->>>>>>> parent of 7e36694 (Revert "update")
   }
+
   addTaskToCol(colId: string, task: Task) {
     const columns: IColumn[] = this.columns$.getValue();
 
@@ -96,6 +84,13 @@ export class TodoService {
     this.columns$.next(columns);
   }
 
+  // editColumn(columnsId: IColumn) {
+  //   const columns: IColumn[] = this.columns$.getValue();
+  //   const column = columns.findIndex((i) => (i.id = columnsId.id));
+  //   console.log(columns);
+  //   console.log(column);
+  // }
+
   removeColumn(columnsId: IColumn) {
     const columns: IColumn[] = this.columns$.getValue();
     console.log(columns);
@@ -111,6 +106,8 @@ export class TodoService {
     const columns: IColumn[] = this.columns$.getValue();
     const column = columns.find((i) => i.id == columnId);
     if (!column) return;
+
+    // const taskIdx = column.tasks.findIndex((i) => i.id === taskId);
     column.tasks.splice(taskId, 1);
     this.columns$.next(columns);
   }

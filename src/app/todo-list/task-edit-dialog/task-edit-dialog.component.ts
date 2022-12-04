@@ -8,9 +8,9 @@ import { TodoService } from 'src/app/todo.service';
   templateUrl: './task-edit-dialog.component.html',
   styleUrls: ['./task-edit-dialog.component.scss'],
 })
-export class EditDialogComponent implements OnInit {
+export class TaskEditDialogComponent implements OnInit {
   constructor(
-    public dialogRef: MatDialogRef<EditDialogComponent>,
+    public dialogRef: MatDialogRef<TaskEditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { colId: string; task: Task },
     public todoService: TodoService
   ) {}

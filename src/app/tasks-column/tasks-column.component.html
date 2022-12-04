@@ -1,19 +1,22 @@
 <div>
   <div class="container ">
     <div>
-      <h2 id="left">{{col.title}}</h2>
+      <h2 id="right-title">{{col.title}}</h2>
     </div>
     <div class="mydivouter">
       <button mat-button id="right" class="mybuttonoverlap btn btn-info" (click)="onRemoveColumn(col)">
-        <i class="fa-sharp fa-solid fa-trash"></i>
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-button id="left" class="mybuttonoverlap btn btn-info" (click)="onEditColumn(col)">
+        <mat-icon>edit</mat-icon>
       </button>
     </div>
   </div>
 
-  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="example-list"
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="list"
     (cdkDropListDropped)="drop($event)">
     <div class="box row" *ngFor="let item of col.tasks; let i = index" cdkDrag>
-      <div class="col-md-9">
+      <div class="custom-placeholder">
         <h2>{{item.title}}</h2>
         <p>{{item.description}}</p>
       </div>
