@@ -1,9 +1,4 @@
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IColumn, TodoService } from '../todo.service';
 
 export interface DialogData {
@@ -19,7 +14,7 @@ export interface Confirm {
   templateUrl: './columns.component.html',
   styleUrls: ['./columns.component.scss'],
 })
-export class ColumnsComponent {
+export class ColumnsComponent implements OnInit {
   columns: IColumn[];
 
   constructor(private todoService: TodoService) {
@@ -29,21 +24,5 @@ export class ColumnsComponent {
     });
   }
 
-  drop(event: CdkDragDrop<IColumn[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
-    this.todoService.saveData();
-  }
+  ngOnInit(): void {}
 }
