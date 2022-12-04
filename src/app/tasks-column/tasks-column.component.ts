@@ -77,4 +77,8 @@ export class TasksColumnComponent {
   onRemoveColumn(colId: IColumn) {
     this.todoService.removeColumn(colId);
   }
+
+  onEditColumn(colId: IColumn) {
+    this.todoService.editColumn(colId);
+  }
 }
