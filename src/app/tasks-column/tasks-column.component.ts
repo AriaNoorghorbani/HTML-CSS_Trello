@@ -3,7 +3,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Task } from '../model/task';
 import { ColumnEditDialogComponent } from '../todo-list/column-edit-dialog/column-edit-dialog.component';
