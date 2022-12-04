@@ -73,4 +73,8 @@ export class TasksColumnComponent {
     }
     this.todoService.saveData();
   }
+
+  onRemoveColumn(colId: IColumn) {
+    this.todoService.removeColumn(colId);
+  }
 }
