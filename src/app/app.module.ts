@@ -26,6 +26,7 @@ import { NewListComponent } from './todo-list/new-list-dialog/new-list-dialog.co
 import { ColumnEditDialogComponent } from './todo-list/column-edit-dialog/column-edit-dialog.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatNativeDateModule,
     FormsModule,
     MatSidenavModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
