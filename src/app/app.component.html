@@ -5,11 +5,9 @@
       <mat-icon>menu
       </mat-icon>
     </button>
-    <button mat-button>
-      <mat-icon class="home-btn">home
-      </mat-icon>
-      <span class="home-btn-txt">Home</span>
-    </button>
+    <div class="col-8">
+
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -17,6 +15,9 @@
 
   <mat-sidenav [(opened)]="opened" mode="side">
     <mat-list>
+      <mat-list-item>
+        <button class="new-column" mat-raised-button (click)="addNewCol()">+ New List</button>
+      </mat-list-item>
       <mat-list-item>
         <a href="">Contact</a>
       </mat-list-item>
