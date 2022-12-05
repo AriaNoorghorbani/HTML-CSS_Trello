@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Task } from 'src/app/interface/task.model';
 import { TodoService } from 'src/app/todo.service';
 
 @Component({
@@ -24,7 +23,6 @@ export class ColumnEditDialogComponent implements OnInit {
       this.data.colTitle,
       this.data.colIdx
     );
-    // console.log(this.data.colIdx);
 
     this.dialogRef.close();
   }

@@ -1,5 +1,5 @@
-import { Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Task } from './model/task';
 
 export type IColumn = {
@@ -53,7 +53,7 @@ export class TodoService {
   editCol(getColumn: string, colTitle: string, colIdx: number) {
     const columns: IColumn[] = this.columns$.getValue();
     const column = columns.findIndex((i) => i.id == getColumn);
-    if (!column) throw Error('can not find the specified column');
+    // if (!column) throw Error('can not find the specified column');
     columns[column].title = colTitle;
     this.columns$.next(columns);
   }
