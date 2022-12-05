@@ -23,7 +23,25 @@ export class TasksColumnComponent {
 
   constructor(private todoService: TodoService, public dialog: MatDialog) {}
 
-  deleteTaskConfirm(taskId: number) {
+  drop(event: CdkDragDrop<Task[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+    this.todoService.saveData();
+  }
+
+  onDeleteTask(taskId: number) {
     const colId = this.col.id;
     const dialogRef = this.dialog.open(TaskDeleteDialogComponent, {
       width: '250px',
@@ -51,41 +69,14 @@ export class TasksColumnComponent {
     dialogRef.afterClosed();
   }
 
-  drop(event: CdkDragDrop<Task[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    }
-    this.todoService.saveData();
-  }
-
-  onRemoveColumn(colId: IColumn) {
+  onDeleteColumn(colId: IColumn) {
     const dialogRef = this.dialog.open(ColumnDeleteDialogComponent, {
       data: {},
     });
-    // const columns = this.todoService.columns$.getValue();
-    // const column = columns.findIndex((i) => i.id == colId.id);
-
     dialogRef.afterClosed().subscribe((result) => {
-      if (result === 'true') {
+      if (result === true) {
         this.todoService.removeColumn(colId);
       }
-
-      // if (result === 'true') {
-      //   this.todoService.removeColumn(column);
-      // } else {
-      //   return;
-      // }
     });
   }
 

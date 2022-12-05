@@ -84,13 +84,6 @@ export class TodoService {
     this.columns$.next(columns);
   }
 
-  // editColumn(columnsId: IColumn) {
-  //   const columns: IColumn[] = this.columns$.getValue();
-  //   const column = columns.findIndex((i) => (i.id = columnsId.id));
-  //   console.log(columns);
-  //   console.log(column);
-  // }
-
   removeColumn(columnsId: IColumn) {
     const columns: IColumn[] = this.columns$.getValue();
     console.log(columns);
@@ -107,7 +100,6 @@ export class TodoService {
     const column = columns.find((i) => i.id == columnId);
     if (!column) return;
 
-    // const taskIdx = column.tasks.findIndex((i) => i.id === taskId);
     column.tasks.splice(taskId, 1);
     this.columns$.next(columns);
   }

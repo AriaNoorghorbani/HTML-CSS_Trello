@@ -4,7 +4,7 @@
       <h2 id="right-title">{{col.title}}</h2>
     </div>
     <div class="mydivouter">
-      <button mat-button id="right" class="mybuttonoverlap" (click)="onRemoveColumn(col)">
+      <button mat-button id="right" class="mybuttonoverlap" (click)="onDeleteColumn(col)">
         <mat-icon>delete</mat-icon>
       </button>
       <button mat-button id="left" class="mybuttonoverlap" (click)="onEditColumn(col)">
@@ -22,7 +22,7 @@
       </div>
 
       <div class="card-edit">
-        <button mat-icon-button type=button (click)="deleteTaskConfirm(i)" class="btn-btn-d">
+        <button mat-icon-button type=button (click)="onDeleteTask(i)" class="btn-btn-d">
           <mat-icon class="btn-card-d">delete</mat-icon>
         </button>
         <button mat-icon-button (click)="onEditTask(i)" class="btn-btn-e">
