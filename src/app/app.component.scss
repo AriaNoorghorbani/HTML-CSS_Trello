@@ -1,9 +1,35 @@
 .navbar {
   background-color: green;
-  padding: 0;
+  padding: 0px;
   display: block;
 }
+mat-toolbar {
+  padding: 0px;
+  margin: 0px;
+}
 
-// .add-todo {
-//   display: inline-block;
-// }
+.spacer {
+  flex: 1 1 auto;
+}
+
+.home-btn {
+  margin-right: 3px;
+}
+
+.home-btn-txt {
+  margin-top: 7px;
+  font-size: 18px;
+}
+
+.mat-sidenav-container {
+  height: calc(205vh - 115vh);
+}
+
+mat-sidenav {
+  width: 200px;
+  background-color: rgb(66, 108, 119);
+}
+
+mat-toolbar-row {
+  padding: 0px;
+}

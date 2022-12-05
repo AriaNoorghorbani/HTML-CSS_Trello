@@ -24,6 +24,8 @@ import { TasksColumnComponent } from './tasks-column/tasks-column.component';
 import { ColumnsComponent } from './columns/columns.component';
 import { NewListComponent } from './todo-list/new-list-dialog/new-list-dialog.component';
 import { ColumnEditDialogComponent } from './todo-list/column-edit-dialog/column-edit-dialog.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { ColumnEditDialogComponent } from './todo-list/column-edit-dialog/column
     ColumnsComponent,
     NewListComponent,
     ColumnEditDialogComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +57,7 @@ import { ColumnEditDialogComponent } from './todo-list/column-edit-dialog/column
     HttpClientModule,
     MatNativeDateModule,
     FormsModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
