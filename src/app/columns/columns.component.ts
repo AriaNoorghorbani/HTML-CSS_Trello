@@ -14,6 +14,7 @@ export interface Confirm {
   yes: boolean;
   no: boolean;
 }
+
 @Component({
   selector: 'app-columns',
   templateUrl: './columns.component.html',
