@@ -6,10 +6,11 @@ import {
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Task } from '../model/task';
-import { ColumnEditDialogComponent } from '../todo-list/column-edit-dialog/column-edit-dialog.component';
-import { DeleteDialogComponent } from '../todo-list/task-delete-dialog/task-delete-dialog.component';
+import { ColumnEditDialogComponent } from '../columns/column-edit-dialog/column-edit-dialog.component';
+import { TaskDeleteDialogComponent } from '../todo-list/task-delete-dialog/task-delete-dialog.component';
 import { TaskEditDialogComponent } from '../todo-list/task-edit-dialog/task-edit-dialog.component';
 import { IColumn, TodoService } from '../todo.service';
+import { ColumnDeleteDialogComponent } from '../columns/column-delete-dialog/column-delete-dialog.component';
 
 @Component({
   selector: 'app-tasks-column',
@@ -24,7 +25,7 @@ export class TasksColumnComponent {
 
   deleteTaskConfirm(taskId: number) {
     const colId = this.col.id;
-    const dialogRef = this.dialog.open(DeleteDialogComponent, {
+    const dialogRef = this.dialog.open(TaskDeleteDialogComponent, {
       width: '250px',
     });
 
@@ -69,7 +70,23 @@ export class TasksColumnComponent {
   }
 
   onRemoveColumn(colId: IColumn) {
-    this.todoService.removeColumn(colId);
+    const dialogRef = this.dialog.open(ColumnDeleteDialogComponent, {
+      data: {},
+    });
+    // const columns = this.todoService.columns$.getValue();
+    // const column = columns.findIndex((i) => i.id == colId.id);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'true') {
+        this.todoService.removeColumn(colId);
+      }
+
+      // if (result === 'true') {
+      //   this.todoService.removeColumn(column);
+      // } else {
+      //   return;
+      // }
+    });
   }
 
   onEditColumn(col: IColumn) {

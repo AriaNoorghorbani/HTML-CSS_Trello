@@ -19,14 +19,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
 import { TaskEditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dialog.component';
-import { DeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
+import { TaskDeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
 import { TasksColumnComponent } from './tasks-column/tasks-column.component';
 import { ColumnsComponent } from './columns/columns.component';
 import { NewListComponent } from './todo-list/new-list-dialog/new-list-dialog.component';
-import { ColumnEditDialogComponent } from './todo-list/column-edit-dialog/column-edit-dialog.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
+import { ColumnEditDialogComponent } from './columns/column-edit-dialog/column-edit-dialog.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/column-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +34,12 @@ import { MatListModule } from '@angular/material/list';
     NavbarComponent,
     AddTaskComponent,
     TaskEditDialogComponent,
-    DeleteDialogComponent,
+    TaskDeleteDialogComponent,
+    ColumnDeleteDialogComponent,
     TasksColumnComponent,
     ColumnsComponent,
     NewListComponent,
     ColumnEditDialogComponent,
-    SideNavComponent,
   ],
   imports: [
     BrowserModule,
