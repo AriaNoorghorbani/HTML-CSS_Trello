@@ -1,33 +1,35 @@
-<div>
-  <div class="container ">
+<div class="top">
+  <div class="container">
     <div>
       <h2 id="right-title">{{col.title}}</h2>
     </div>
     <div class="mydivouter">
-      <button mat-button id="right" class="mybuttonoverlap btn btn-info" (click)="onRemoveColumn(col)">
+      <button mat-button id="right" class="mybuttonoverlap" (click)="onRemoveColumn(col)">
         <mat-icon>delete</mat-icon>
       </button>
-      <button mat-button id="left" class="mybuttonoverlap btn btn-info" (click)="onEditColumn(col)">
+      <button mat-button id="left" class="mybuttonoverlap" (click)="onEditColumn(col)">
         <mat-icon>edit</mat-icon>
       </button>
     </div>
   </div>
 
-  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="list"
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="list "
     (cdkDropListDropped)="drop($event)">
-    <div class="box row" *ngFor="let item of col.tasks; let i = index" cdkDrag>
+    <div class="box " *ngFor="let item of col.tasks; let i = index" cdkDrag>
       <div class="custom-placeholder">
         <h2>{{item.title}}</h2>
         <p>{{item.description}}</p>
       </div>
-      <div class="col">
-        <button mat-icon-button type=button (click)="deleteTaskConfirm(i)">
-          <mat-icon>delete</mat-icon>
+
+      <div class="card-edit">
+        <button mat-icon-button type=button (click)="deleteTaskConfirm(i)" class="btn-btn-d">
+          <mat-icon class="btn-card-d">delete</mat-icon>
         </button>
-        <button mat-icon-button (click)="onEditTask(i)">
-          <mat-icon>edit</mat-icon>
+        <button mat-icon-button (click)="onEditTask(i)" class="btn-btn-e">
+          <mat-icon class="btn-card-e">edit</mat-icon>
         </button>
       </div>
+
     </div>
   </div>
   <app-add-todo class="add-todo" [colId]="col.id"></app-add-todo>
