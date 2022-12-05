@@ -15,7 +15,10 @@
 
   <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="list "
     (cdkDropListDropped)="drop($event)">
-    <div class="box " *ngFor="let item of col.tasks; let i = index" cdkDrag>
+    <div class="box " *ngFor="let item of col.tasks; let i = index" cdkDrag [ngStyle]="{
+      'top.px': item.id,
+      'left.px': item.id
+    }">
       <div class="custom-placeholder">
         <h2>{{item.title}}</h2>
         <p>{{item.description}}</p>

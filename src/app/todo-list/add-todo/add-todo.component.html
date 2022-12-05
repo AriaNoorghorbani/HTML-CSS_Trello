@@ -1,4 +1,4 @@
-<div class="add-task">
+<!-- <div *ngIf="addTaskMode === true" class="add-task">
   <div class="row">
     <mat-card>
       <div>
@@ -15,7 +15,44 @@
         </form>
       </div>
     </mat-card>
-    <button *ngIf="editMode === false" mat-raised-button class="add-btn" style="font-size: 20px"
-      (click)="onAddTask()">+Add Task</button>
+    <button mat-raised-button class="add-btn" style="font-size: 18px" (click)="onAddTask()">Save Task</button>
   </div>
 </div>
+<div *ngIf="inputTaskMode === false" class="add-task-div" (click)="inputTaskMode = !inputTaskMode">
+  <button (click)="addTaskMode = !addTaskMode" class="add-task-btn">+Add
+    Task</button>
+</div> -->
+
+<mat-accordion>
+  <mat-expansion-panel [expanded]="panelOpenState" (opened)="addTaskHeader = 'Enter your data:'"
+    (closed)="addTaskHeader = '+ Add task'" class="add-task-header">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="add-task-title">
+        <p class="add-task-header-text">{{addTaskHeader}}</p>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <div class="add-task">
+      <div class="row">
+        <mat-card>
+          <div>
+            <form [formGroup]="todoForm">
+              <mat-form-field appearance="fill" class="input">
+                <mat-label>Enter your title</mat-label>
+                <input matInput placeholder=" Reading CSS today" required formControlName="title">
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="input">
+                <mat-label>Enter your description</mat-label>
+                <textarea rows="2" matInput placeholder=" Reading CSS today" required
+                  formControlName="description"></textarea>
+              </mat-form-field>
+            </form>
+          </div>
+        </mat-card>
+        <button mat-raised-button class="add-btn" style="font-size: 18px" (click)="onAddTask()">Save Task</button>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+

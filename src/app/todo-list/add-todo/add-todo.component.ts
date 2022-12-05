@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TodoService } from '../../todo.service';
 
@@ -7,9 +7,13 @@ import { TodoService } from '../../todo.service';
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.scss'],
 })
-export class AddTaskComponent implements OnInit {
+export class AddTaskComponent {
   todoForm: FormGroup;
-  editMode = false;
+  addTaskMode: boolean = false;
+  inputTaskMode = false;
+  addTaskHeader: string = '+ Add task';
+  panelOpenState: boolean = false;
+
   @Input() colId!: string;
 
   constructor(private todoService: TodoService, private fb: FormBuilder) {
@@ -18,8 +22,6 @@ export class AddTaskComponent implements OnInit {
       description: ['', Validators.required],
     });
   }
-
-  ngOnInit(): void {}
 
   onAddTask() {
     debugger;

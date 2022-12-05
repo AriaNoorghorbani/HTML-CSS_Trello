@@ -6,6 +6,7 @@
 }
 
 .list {
+  margin: 5px 5px 0px 5px;
   border: solid 1px #ccc;
   min-height: 50px;
   background: white;
@@ -102,7 +103,9 @@
 .top {
   // min-width: 300px;
   // max-width: 500px;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
+  background-color: cadetblue;
 }
 
 .btn-card-main {

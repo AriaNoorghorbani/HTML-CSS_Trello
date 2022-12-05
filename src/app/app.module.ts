@@ -27,6 +27,7 @@ import { ColumnEditDialogComponent } from './columns/column-edit-dialog/column-e
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/column-delete-dialog.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/colu
     FormsModule,
     MatSidenavModule,
     MatListModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -21,6 +21,7 @@ export class TasksColumnComponent {
   @Input()
   col!: IColumn;
 
+
   constructor(private todoService: TodoService, public dialog: MatDialog) {}
 
   drop(event: CdkDragDrop<Task[]>) {
