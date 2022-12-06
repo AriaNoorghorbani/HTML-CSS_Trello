@@ -27,9 +27,13 @@ mat-toolbar {
 
 mat-sidenav {
   width: 200px;
-  background-color: rgb(83, 83, 83);
+  background-color: #d3d5dd;
 }
 
 mat-toolbar-row {
   padding: 0px;
+}
+
+.toolbar-top {
+  background-color: #eaeaef;
 }

@@ -6,15 +6,16 @@
 
 .input {
   width: 100%;
-  background-color: #386641;
+  background-color: #a3a5aa;
 }
 
 .input-form {
-  color: #386641;
+  color: #c6c7ce;
 }
 
 .add-btn {
-  background-color: #6a994e;
+  background-color: #c6c7ce;
+  color: #222222;
 }
 
 .add-task-div {
@@ -27,34 +28,21 @@
   width: 100%;
   text-decoration: none;
   border: 0;
-  color: white;
+  // color: white;
 }
 
 .add-task-header {
-  background-color: #386641;
+  background-color: #ebecf0;
   width: 100%;
 }
 
 .add-task-header-text {
   font-size: 17px;
   width: 100%;
-  color: white;
+  color: #222222;
   text-align: center;
 }
 
 .add-task-title {
   height: 20px;
-}
-
-.mat-card-header {
-  background-color: gold;
-  padding: 5px;
-}
-
-.mat-card {
-  padding: 0px;
-}
-
-.mat-card-content {
-  padding: 5px;
 }
