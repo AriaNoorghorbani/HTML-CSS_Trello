@@ -6,10 +6,15 @@
 
 .input {
   width: 100%;
+  background-color: #386641;
+}
+
+.input-form {
+  color: #386641;
 }
 
 .add-btn {
-  background-color: cadetblue;
+  background-color: #6a994e;
 }
 
 .add-task-div {
@@ -26,7 +31,7 @@
 }
 
 .add-task-header {
-  background-color: cadetblue;
+  background-color: #386641;
   width: 100%;
 }
 
@@ -39,4 +44,17 @@
 
 .add-task-title {
   height: 20px;
+}
+
+.mat-card-header {
+  background-color: gold;
+  padding: 5px;
+}
+
+.mat-card {
+  padding: 0px;
+}
+
+.mat-card-content {
+  padding: 5px;
 }

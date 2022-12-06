@@ -25,7 +25,7 @@
 
 <mat-accordion>
   <mat-expansion-panel [expanded]="panelOpenState" (opened)="addTaskHeader = 'Enter your data:'"
-    (closed)="addTaskHeader = '+ Add task'" class="add-task-header">
+    (closed)="addTaskHeader = '+ Add task'" class="add-task-header ">
     <mat-expansion-panel-header>
       <mat-panel-title class="add-task-title">
         <p class="add-task-header-text">{{addTaskHeader}}</p>
@@ -34,7 +34,7 @@
     </mat-expansion-panel-header>
     <div class="add-task">
       <div class="row">
-        <mat-card>
+        <mat-card class="input-form">
           <div>
             <form [formGroup]="todoForm">
               <mat-form-field appearance="fill" class="input">
@@ -54,5 +54,3 @@
     </div>
   </mat-expansion-panel>
 </mat-accordion>
-
-

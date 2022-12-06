@@ -1,12 +1,12 @@
 .container {
   width: 100%;
-  margin: 0 5px 5px 0;
-  display: inline-block;
-  vertical-align: top;
+  // margin: 0 5px 5px 0;
+  // display: inline-block;
+  vertical-align: middle;
 }
 
 .list {
-  margin: 5px 5px 0px 5px;
+  margin: 5px 5px 1px 5px;
   border: solid 1px #ccc;
   min-height: 50px;
   background: white;
@@ -50,6 +50,14 @@
 
 .list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.top {
+  // min-width: 300px;
+  // max-width: 500px;
+  // height: 100%;
+  // width: 100%;
+  background-color: #386641;
 }
 
 .no-task {
@@ -113,14 +121,6 @@
 .container:hover .mybuttonoverlap {
   display: block;
   background-color: transparent;
-}
-
-.top {
-  // min-width: 300px;
-  // max-width: 500px;
-  // height: 100%;
-  // width: 100%;
-  background-color: cadetblue;
 }
 
 .btn-card-main {
