@@ -20,7 +20,7 @@ import { ColumnDeleteDialogComponent } from '../columns/column-delete-dialog/col
 export class TasksColumnComponent {
   @Input()
   col!: IColumn;
-
+  changeText: boolean = false;
 
   constructor(private todoService: TodoService, public dialog: MatDialog) {}
 

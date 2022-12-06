@@ -13,12 +13,12 @@
     </div>
   </div>
 
-  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="list "
+  <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="col.tasks" class="list"
     (cdkDropListDropped)="drop($event)">
-    <div class="box " *ngFor="let item of col.tasks; let i = index" cdkDrag [ngStyle]="{
-      'top.px': item.id,
-      'left.px': item.id
-    }">
+    <div *ngIf="col.tasks.length<1" class="no-task">
+      <h3>Task has not been submit for this column yet</h3>
+    </div>
+    <div class="box " *ngFor="let item of col.tasks; let i = index" cdkDrag [ngStyle]="">
       <div class="custom-placeholder">
         <h2>{{item.title}}</h2>
         <p>{{item.description}}</p>
