@@ -179,6 +179,10 @@
   gap: 1rem 0;
   color: $blue-navbar-text;
 
+  h3 {
+    font-weight: bold;
+  }
+
   .navbar__menu--item--features--left--title {
     display: flex;
     flex-wrap: wrap;
@@ -191,9 +195,20 @@
   &--content {
     display: flex;
     flex-wrap: wrap;
+    a {
+      padding: 0.9rem;
+      cursor: pointer;
+      min-height: 30%;
+      max-height: 49%;
+
+      &:hover {
+        background-color: $navbar-child-hover;
+      }
+    }
 
     svg {
       margin: 0 0.5rem 0 0;
+      color: $navbar-svg;
     }
   }
 
@@ -201,6 +216,15 @@
     text-decoration: none;
     width: 33.3333%;
     color: $blue-navbar-text;
+  }
+
+  h3 {
+    margin: 0.4rem !important;
+    // padding: 0 !important;
+  }
+
+  &--see {
+    font-size: 1.2rem;
   }
 }
 .navbar__menu--item--features--right {
@@ -212,6 +236,10 @@
     height: 1px;
     background-color: #585181;
     border: none;
+  }
+
+  h3 {
+    font-weight: bold;
   }
 
   &--title {
@@ -236,9 +264,4 @@
       }
     }
   }
-}
-
-h3 {
-  margin: 0 !important;
-  padding: 0 !important;
 }
