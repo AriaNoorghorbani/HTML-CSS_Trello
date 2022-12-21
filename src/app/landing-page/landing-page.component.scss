@@ -154,80 +154,80 @@
 
 .navbar__menu {
   background-color: green;
-}
 
-.navbar__menu--item {
-  position: fixed;
-  left: 0;
-  width: 100vw;
-  height: 40%;
-  background-color: #ffffff;
-  box-shadow: inset 0 0.5rem 1rem rgba(9, 30, 66, 0.15);
-}
-
-.navbar__menu--item--features {
-  display: flex;
-  height: 100%;
-  margin: 0rem 0rem 0rem 25rem;
-}
-
-.navbar__menu--item--features--left {
-  padding: 1.5rem 0 0 0;
-  width: 52%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 0;
-  color: $blue-navbar-text;
-
-  h3 {
-    font-weight: bold;
+  &--items {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 40%;
+    background-color: #ffffff;
+    box-shadow: inset 0 0.5rem 1rem rgba(9, 30, 66, 0.15);
   }
 
-  .navbar__menu--item--features--left--title {
+  &--item {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 0;
-    border-bottom: 1px solid #dfe1e6;
-    max-height: 40px;
-    min-width: 95%;
-  }
+    height: 100%;
+    margin: 0rem 0rem 0rem 25rem;
 
-  &--content {
-    display: flex;
-    flex-wrap: wrap;
-    a {
-      padding: 0.9rem;
-      cursor: pointer;
-      min-height: 30%;
-      max-height: 49%;
+    &--left {
+      padding: 1.5rem 0 0 0;
+      width: 52%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 0;
+      color: $blue-navbar-text;
 
-      &:hover {
-        background-color: $navbar-child-hover;
+      h3 {
+        font-weight: bold;
+      }
+
+      &--title {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 0;
+        border-bottom: 1px solid #dfe1e6;
+        max-height: 40px;
+        min-width: 95%;
+      }
+
+      &--content {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+          padding: 0.9rem;
+          cursor: pointer;
+          min-height: 30%;
+          max-height: 49%;
+
+          &:hover {
+            background-color: $navbar-child-hover;
+          }
+        }
+
+        svg {
+          margin: 0 0.5rem 0 0;
+          color: $navbar-svg;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        width: 33.3333%;
+        color: $blue-navbar-text;
+      }
+
+      h3 {
+        margin: 0.4rem !important;
+      }
+
+      &--see {
+        font-size: 1.2rem;
       }
     }
-
-    svg {
-      margin: 0 0.5rem 0 0;
-      color: $navbar-svg;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    width: 33.3333%;
-    color: $blue-navbar-text;
-  }
-
-  h3 {
-    margin: 0.4rem !important;
-    // padding: 0 !important;
-  }
-
-  &--see {
-    font-size: 1.2rem;
   }
 }
-.navbar__menu--item--features--right {
+
+.navbar__menu--item--right {
   background-color: rgba(234, 230, 255, 0.4);
   padding: 1.5rem 25rem 0 3rem;
   width: 48%;
