@@ -28,6 +28,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/column-delete-dialog.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MainTaskComponent } from './main-task/main-task.component';
+import {
+  DialogOverviewExampleDialog,
+  LandingPageComponent,
+} from './landing-page/landing-page.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ColumnsComponent,
     NewListComponent,
     ColumnEditDialogComponent,
+    MainTaskComponent,
+    LandingPageComponent,
+    DialogOverviewExampleDialog,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +71,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

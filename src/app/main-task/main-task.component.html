@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-toolbar class="toolbar-top">
+    <mat-toolbar-row class="navbar__row">
+      <button mat-button (click)="opened=!opened">
+        <mat-icon class="navbar__btn">apps
+        </mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="main">
+    <mat-sidenav [(opened)]="opened" mode="side">
+      <mat-list>
+        <mat-list-item>
+          <button class="new-column" mat-raised-button (click)="addNewCol()">+ New List</button>
+        </mat-list-item>
+        <mat-list-item>
+          <a href="">Contact</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a href="">About Us</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+    <app-columns></app-columns>
+  </mat-sidenav-container>
+
+</div>

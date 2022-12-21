@@ -1,0 +1,228 @@
+<div class="container">
+  <div class="navbar">
+    <svg aria-label="Trello" class="navbar__icon" height="22.5" role="img" viewBox="0 0 312 64" width="109.6875"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <linearGradient id="trello-logo-gradient-defaultbig" x1="50.048061%" x2="50.048061%" y1="100%" y2="0%">
+        <stop offset="0" stop-color="var(--ds-background-accent-blue-bolder, #0052cc)"></stop>
+        <stop offset="1" stop-color="var(--ds-background-accent-blue-subtle, #2684ff)"></stop>
+      </linearGradient>
+      <g fill="none" fill-rule="evenodd">
+        <path
+          d="m55.59.07h-47.59c-4.09405078 0-7.41448241 3.31595294-7.42006073 7.41v47.52c-.00791682 1.9730991.77030774 3.8681213 2.16269326 5.2661365 1.39238553 1.3980151 3.28425224 2.1838635 5.25736747 2.1838635h47.59c1.9713817-.0026407 3.8606757-.7896772 5.250897-2.1874031s2.1670753-3.2912295 2.1591638-5.2625969v-47.52c-.0055694-4.09014608-3.3199147-7.40449138-7.4100608-7.41zm-28.09 44.93c-.0026377.6594819-.2678382 1.2907542-.7369724 1.7542587-.4691341.4635046-1.1035619.721065-1.7630276.7158222h-10.4c-1.3602365-.005588-2.46-1.1098333-2.46-2.4700809v-30.95c0-1.3602476 1.0997635-2.4644929 2.46-2.47h10.4c1.3618668.0054804 2.4645196 1.1081332 2.47 2.47zm24-14.21c0 .6603158-.2642968 1.2931595-.7340204 1.7572465-.4697237.464087-1.1057125.7207735-1.7659796.7129359h-10.4c-1.3618668-.0056628-2.4645196-1.1083156-2.47-2.4701824v-16.74c.0054804-1.3618668 1.1081332-2.4645196 2.47-2.47h10.4c1.3602365.0055071 2.4600111 1.1097524 2.46 2.47z"
+          fill="url(#trello-logo-gradient-defaultbig)"></path>
+        <g fill="var(--ds-background-brand-bold-pressed, #293856)" fill-rule="nonzero" transform="translate(87)">
+          <path d="m42.92 4.64v12.06h-14.29v45.75h-13.78v-45.75h-14.29v-12.06z"></path>
+          <path d="m60.46 62.45h-12.74v-45h12.74v8.62c2.42-6.07 6.29-9.68 13.18-9.24v13.33c-9-.7-13.18 1.5-13.18 8.71z">
+          </path>
+          <path
+            d="m143.24 62.8c-8.35 0-13.6-4-13.6-13.46v-49.27h12.83v47.51c0 2.73 1.8 3.7 4 3.7.634638.0128631 1.269419-.0172055 1.9-.09v11.09c-1.677893.4087549-3.404213.5837425-5.13.52z">
+          </path>
+          <path
+            d="m170 62.8c-8.35 0-13.61-4-13.61-13.46v-49.27h12.83v47.51c0 2.73 1.81 3.7 4.05 3.7.631315.0130885 1.262786-.0169816 1.89-.09v11.09c-1.687411.4126716-3.42418.5876949-5.16.52z">
+          </path>
+          <path
+            d="m181.31 39.93c0-13.9 8-23.41 21.78-23.41s21.61 9.48 21.61 23.41-7.92 23.58-21.61 23.58-21.78-9.77-21.78-23.58zm12.49 0c0 6.77 2.84 12.14 9.29 12.14s9.13-5.37 9.13-12.14-2.75-12-9.13-12-9.29 5.22-9.29 12z">
+          </path>
+          <path
+            d="m90.84 44c3.5670052.3919324 7.1516349.602204 10.74.63 9.76 0 18-2.62 18-12.07 0-9.17-8.47-16.06-18.66-16.06-13.72 0-22.51 9.95-22.51 23.85 0 14.43 7.58 23 24.71 23 5.081836.0413682 10.127233-.8605644 14.88-2.66v-10.78c-4.4 1.41-9.35 2.81-14.43 2.81-6.82 0-11.57-2.24-12.73-8.72zm9.82-17.68c3.61 0 6.51 2.45 6.51 5.8 0 4.31-4.55 5.66-9.79 5.66-2.2301144-.0102442-4.4563338-.1874058-6.66-.53.1664561-2.1013033.7692883-4.1448022 1.77-6 1.6348247-2.9938883 4.7590565-4.8714866 8.17-4.91z">
+          </path>
+        </g>
+      </g>
+    </svg>
+    <div class="navbar__btns">
+      <div class="navbar__btn">
+
+        <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          Features
+          <span class="navbar__svg"><svg fill="currentColor" height="6" viewBox="0 0 13 8" width="10"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.7305.59279c.3626.362629.3885.93447.0777 1.32699l-.0777.08722-4.99999 4.99999c-.36263.36263-.93446.38853-1.32697.0777l-.08725-.0777-4.999959-4.99997c-.3905249-.39052-.3905242-1.023685 0-1.414209.362629-.36263.934469-.388553 1.326989-.077728l.08722.077728 4.29292 4.292139 4.29284-4.29216c.3626-.36263.9345-.388532 1.327-.077707z">
+              </path>
+            </svg></span>
+        </button>
+        <mat-menu class="navbar__menu mat-elevation-z24" #menu="matMenu" setElevation="5">
+
+          <div class="navbar__menu--item">
+            <div class="navbar__menu--item--features">
+              <div class="navbar__menu--item--features--left">
+                <div class="navbar__menu--item--features--left--title">
+                  <h2>Explore the features that help your team succeed</h2>
+                  <br>
+                </div>
+                <div class="navbar__menu--item--features--left--content">
+
+                  <a class="navbar__menu--item--features--left--views">
+                    <h3><svg width="16" height="16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                          d="M31.8115 38.0924C31.393 37.0057 29.8555 37.0057 29.4369 38.0924L27.8317 42.2604L23.6637 43.8656C22.577 44.2842 22.577 45.8217 23.6637 46.2402L27.8317 47.8454L29.4369 52.0135C29.8555 53.1002 31.393 53.1002 31.8115 52.0135L33.4167 47.8454L37.5848 46.2402C38.6715 45.8217 38.6715 44.2842 37.5848 43.8656L33.4167 42.2604L31.8115 38.0924Z"
+                          fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M32 0C49.6731 0 64 14.3269 64 32C64 49.6731 49.6731 64 32 64C14.3269 64 0 49.6731 0 32C0 14.3269 14.3269 0 32 0ZM46.6329 24.4498C46.2144 23.3631 44.6769 23.3631 44.2584 24.4498L42.6531 28.6178L38.4851 30.223C37.3984 30.6416 37.3984 32.1791 38.4851 32.5976L42.6531 34.2028L44.2584 38.3709C44.6769 39.4576 46.2144 39.4576 46.6329 38.3709L48.2381 34.2028L52.4062 32.5976C53.4929 32.1791 53.4929 30.6416 52.4062 30.223L48.2381 28.6178L46.6329 24.4498ZM31.8119 38.0919C31.3934 37.0052 29.8558 37.0052 29.4373 38.0919L27.8321 42.26L23.6641 43.8652C22.5773 44.2837 22.5773 45.8213 23.6641 46.2398L27.8321 47.845L29.4373 52.013C29.8558 53.0998 31.3934 53.0998 31.8119 52.013L33.4171 47.845L37.5851 46.2398C38.6719 45.8213 38.6719 44.2837 37.5851 43.8652L33.4171 42.26L31.8119 38.0919ZM22.7155 13.3671C23.2177 12.0631 25.0627 12.0631 25.565 13.3671L27.5398 18.4949L32.6675 20.4697C33.9716 20.9719 33.9716 22.8169 32.6676 23.3192L27.5398 25.294L25.565 30.4217C25.0627 31.7258 23.2177 31.7258 22.7155 30.4217L20.7407 25.294L15.6129 23.3192C14.3089 22.8169 14.3088 20.9719 15.6129 20.4697L20.7407 18.4949L22.7155 13.3671Z"
+                          fill="currentColor"></path>
+                      </svg>Views</h3>
+                    <p>View your team's projects from every angle.</p>
+                  </a>
+                  <a class="navbar__menu--item--features--left--automation">
+                    <h3><svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M14 12.6591C14 13.7225 13.138 14.5845 12.0746 14.5845H1.92539C0.862025 14.5845 0 13.7225 0 12.6591V6.84793C0 5.78457 0.862025 4.92255 1.92539 4.92255H12.0746C13.138 4.92255 14 5.78457 14 6.84793V12.6591ZM5.93141 9.76875C5.93141 10.491 5.34594 11.0764 4.62372 11.0764C3.9015 11.0764 3.31603 10.491 3.31603 9.76875C3.31603 9.04653 3.9015 8.46106 4.62372 8.46106C5.34594 8.46106 5.93141 9.04653 5.93141 9.76875ZM9.39293 11.0764C10.1151 11.0764 10.7006 10.491 10.7006 9.76875C10.7006 9.04653 10.1151 8.46106 9.39293 8.46106C8.67071 8.46106 8.08523 9.04653 8.08523 9.76875C8.08523 10.491 8.67071 11.0764 9.39293 11.0764Z"
+                          fill="currentColor"></path>
+                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                          d="M7.00008 0C5.95938 0 5.11572 0.843654 5.11572 1.88435C5.11572 2.68063 5.60962 3.36154 6.30778 3.63747V4.92225L6.30853 4.95484C6.32555 5.32206 6.62866 5.61456 7.00009 5.61456C7.38244 5.61456 7.69239 5.3046 7.69239 4.92225V3.63746C8.39054 3.36153 8.88443 2.68062 8.88443 1.88435C8.88443 0.843654 8.04078 0 7.00008 0ZM7.00945 2.38385C7.28112 2.37885 7.49981 2.15706 7.49981 1.8842C7.49981 1.6082 7.27607 1.38446 7.00007 1.38446C6.72408 1.38446 6.50034 1.6082 6.50034 1.8842C6.50034 2.15707 6.71903 2.37886 6.99071 2.38385C6.99383 2.38381 6.99696 2.38379 7.00009 2.38379C7.00321 2.38379 7.00634 2.38381 7.00945 2.38385Z"
+                          fill="currentColor"></path>
+                      </svg>Automation</h3>
+                    <p>Automate tasks and workflows with Butler automation.</p>
+                  </a>
+                  <a class="navbar__menu--item--features--left--powerups">
+                    <h3>Power-Ups</h3>
+                    <p>Power up your teams by linking their favorite tools with Trello plugins.</p>
+                  </a>
+                  <a class="navbar__menu--item--features--left--templates">
+                    <h3>Templates</h3>
+                    <p>Give your team a blueprint for success with easy-to-use templates from industry leaders and the
+                      Trello community.</p>
+                  </a>
+                  <a class="navbar__menu--item--features--left--integrations">
+                    <h3>Integrations</h3>
+                    <p>Find the apps your team is already using or discover new ways to get work done in Trello.</p>
+                  </a>
+                </div>
+              </div>
+              <div class="navbar__menu--item--features--right">
+                <div class="navbar__menu--item--features--right--title">
+                  <h3>Meet Trello</h3>
+                </div>
+                <hr>
+                <div class="navbar__menu--item--features--right--content">
+                  <p>
+                    Trello makes it easy for your team to get work done. No matter the project, workflow, or type of
+                    team, Trello can help keep things organized. It's simple - sign-up, create a board, and you're off!
+                    Productivity awaits.
+                  </p>
+                  <button mat-stroked-button>Check out Trello</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </mat-menu>
+
+        <!-- <button (click)="openDialog()">Features</button>
+        <button (click)="openDialog()">Features</button>
+        <button (click)="openDialog()">Features</button> -->
+
+      </div>
+
+      <!-- <div class="navbar__btn">
+        <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          Solutions
+          <span class="navbar__svg"><svg fill="currentColor" height="6" viewBox="0 0 13 8" width="10"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.7305.59279c.3626.362629.3885.93447.0777 1.32699l-.0777.08722-4.99999 4.99999c-.36263.36263-.93446.38853-1.32697.0777l-.08725-.0777-4.999959-4.99997c-.3905249-.39052-.3905242-1.023685 0-1.414209.362629-.36263.934469-.388553 1.326989-.077728l.08722.077728 4.29292 4.292139 4.29284-4.29216c.3626-.36263.9345-.388532 1.327-.077707z">
+              </path>
+            </svg></span>
+        </button>
+        <mat-menu #menu="matMenu" class="my-menu">
+          <div class="navbar__menu--btn">
+
+          </div>
+        </mat-menu>
+      </div> -->
+
+      <!-- <div class="navbar__btn">
+
+        <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          Plans
+          <span class="navbar__svg"><svg fill="currentColor" height="6" viewBox="0 0 13 8" width="10"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.7305.59279c.3626.362629.3885.93447.0777 1.32699l-.0777.08722-4.99999 4.99999c-.36263.36263-.93446.38853-1.32697.0777l-.08725-.0777-4.999959-4.99997c-.3905249-.39052-.3905242-1.023685 0-1.414209.362629-.36263.934469-.388553 1.326989-.077728l.08722.077728 4.29292 4.292139 4.29284-4.29216c.3626-.36263.9345-.388532 1.327-.077707z">
+              </path>
+            </svg></span>
+        </button>
+        <mat-menu #menu="matMenu">
+
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </div>
+
+      <div class="navbar__btn">
+        <button mat-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          Pricing
+        </button>
+      </div>
+
+      <div class="navbar__btn"><button mat-button [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu">
+          Resources
+          <span class="navbar__svg"><svg fill="currentColor" height="6" viewBox="0 0 13 8" width="10"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.7305.59279c.3626.362629.3885.93447.0777 1.32699l-.0777.08722-4.99999 4.99999c-.36263.36263-.93446.38853-1.32697.0777l-.08725-.0777-4.999959-4.99997c-.3905249-.39052-.3905242-1.023685 0-1.414209.362629-.36263.934469-.388553 1.326989-.077728l.08722.077728 4.29292 4.292139 4.29284-4.29216c.3626-.36263.9345-.388532 1.327-.077707z">
+              </path>
+            </svg></span>
+        </button>
+        <mat-menu #menu="matMenu">
+
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </div> -->
+
+
+      <!-- <mat-accordion class="asb">
+        <mat-expansion-panel hideToggle class="bottom">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              This is the expansion title
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>This is the primary content of the panel.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion class="gav">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              This is the expansion title
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>This is the primary content of the panel.</p>
+        </mat-expansion-panel>
+      </mat-accordion> -->
+
+    </div>
+    <div class="navbar__right">
+      <div class="navbar__login">Log in</div>
+      <div class="navbar__get">Get Trello for free</div>
+    </div>
+  </div>
+  <div class="main">
+    <h1>Sign up to see this board</h1>
+    <p>You’re almost there! The board you are trying to access requires a Trello account.</p>
+    <button mat-raised-button>Sign up for free</button>
+    <a href="">Already have an account? Log in</a>
+  </div>
+  <div class="bottom__background">
+    <img id="tape" src="https://a.trellocdn.com/prgb/dist/images/request-access/bottom-curve.45d7253154299d327a17.png"
+      alt=""><img id="people" class="bottom__background--image"
+      src="https://a.trellocdn.com/prgb/dist/images/request-access/background-left.da0d6fb7fd0a5918d5e8.svg" alt="">
+  </div>
+</div>
