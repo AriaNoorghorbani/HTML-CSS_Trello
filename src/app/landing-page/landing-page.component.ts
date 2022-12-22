@@ -1,9 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
+import { Component, QueryList, ViewChildren } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 export interface DialogData {
   animal: string;
@@ -16,41 +12,14 @@ export interface DialogData {
   styleUrls: ['./landing-page.component.scss'],
 })
 export class LandingPageComponent {
-  animal: string = '';
-  name: string = '';
-
-  constructor(public dialog: MatDialog) {}
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      // id: 'dialog',
-      // width: '470px',
-      // height: '12rem',
-      // autoFocus: false,
-      // disableClose: true,
-      // backdropClass: 'asb',
-      data: { name: this.name, animal: this.animal },
+  @ViewChildren(MatMenuTrigger) trigger: QueryList<MatMenuTrigger>;
+  highlight: any;
+  openMenu(index: number) {
+    this.trigger.toArray().forEach((item: MatMenuTrigger, i: number) => {
+      this.highlight = item.openMenu;
+      if (i !== index && item.menuOpen) {
+        item.closeMenu();
+      }
     });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
-  }
-}
-
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  templateUrl: './dialog-overview-example-dialog.html',
-  styleUrls: ['./landing-page.component.scss'],
-})
-export class DialogOverviewExampleDialog {
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 }
