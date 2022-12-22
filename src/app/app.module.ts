@@ -32,6 +32,7 @@ import { MainTaskComponent } from './main-task/main-task.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './landing-page/sign-up/sign-up.component';
+import { PricingComponent } from './landing-page/pricing/pricing.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SignUpComponent } from './landing-page/sign-up/sign-up.component';
     MainTaskComponent,
     LandingPageComponent,
     SignUpComponent,
+    PricingComponent,
   ],
   imports: [
     BrowserModule,
