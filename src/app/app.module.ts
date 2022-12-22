@@ -31,6 +31,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MainTaskComponent } from './main-task/main-task.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { SignUpComponent } from './landing-page/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatMenuModule } from '@angular/material/menu';
     ColumnEditDialogComponent,
     MainTaskComponent,
     LandingPageComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,

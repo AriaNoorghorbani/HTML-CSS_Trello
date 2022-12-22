@@ -102,49 +102,7 @@
   }
 }
 
-.main {
-  color: $blue;
-  display: flex;
-  flex-direction: column;
-  padding: 9rem 0rem 0rem 24rem;
-  // align-items: center;
-  h1 {
-    font-family: BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu,
-      Droid Sans, Helvetica Neue, sans-serif !important;
-    font-size: 2.1rem !important;
-  }
 
-  button {
-    max-width: 125px;
-    margin: 3rem 0 1rem 0;
-    background-color: $light-blue;
-    &:hover {
-      background-color: $light-blue-hover;
-    }
-  }
-}
-
-.bottom__background {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 100%;
-  height: 100%;
-  position: relative;
-
-  #people {
-    position: absolute;
-    margin: 0rem 4.1rem 3rem 0rem;
-    max-width: 55%;
-    max-height: 55%;
-  }
-
-  #tape {
-    position: absolute;
-
-    min-width: 100%;
-  }
-}
 
 ::ng-deep.mat-menu-panel {
   max-width: none !important;
