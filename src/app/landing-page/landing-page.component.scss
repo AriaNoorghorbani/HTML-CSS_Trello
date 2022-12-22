@@ -211,7 +211,7 @@
         display: flex;
         flex-wrap: wrap;
         margin: 0 2rem 0 0;
-        a {
+        .a-hover {
           padding: 0.9rem;
           cursor: pointer;
           min-height: 30%;
@@ -231,13 +231,11 @@
           width: 100% !important;
           height: 6rem !important;
           display: flex;
-          padding-left: 5rem;
+          padding: 1.5rem;
           background-color: $plan__free--cta;
           justify-content: space-between;
+          align-items: center;
           cursor: default !important;
-          :hover{
-            
-          }
 
           &--button {
             display: flex;
@@ -246,6 +244,10 @@
             border: 1px solid $plan__free-cta-btn;
             height: 3rem;
             font-size: 1.1rem;
+
+            &:hover {
+              background-color: $plan__free-cta-btn-hover;
+            }
           }
 
           .plan__free-content {
@@ -356,4 +358,10 @@
       }
     }
   }
+}
+
+$overlayZIndex: 1000;
+
+.navbar__btn {
+  z-index: $overlayZIndex + 1;
 }
