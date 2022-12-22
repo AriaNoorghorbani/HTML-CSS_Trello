@@ -171,10 +171,20 @@
     box-shadow: inset 0 0.5rem 1rem rgba(9, 30, 66, 0.15);
   }
 
+  &--plans--items {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 30%;
+    background-color: #ffffff;
+    box-shadow: inset 0 0.5rem 1rem rgba(9, 30, 66, 0.15);
+  }
+
   &--item {
     display: flex;
     height: 100%;
     margin: 0rem 0rem 0rem 25rem;
+    gap: 2rem;
 
     &--left {
       padding: 1.5rem 0 0 0;
@@ -200,6 +210,7 @@
       &--content {
         display: flex;
         flex-wrap: wrap;
+        margin: 0 2rem 0 0;
         a {
           padding: 0.9rem;
           cursor: pointer;
@@ -214,6 +225,46 @@
         svg {
           margin: 0 0.5rem 0 0;
           color: $navbar-svg;
+        }
+
+        &--free {
+          width: 100% !important;
+          height: 6rem !important;
+          display: flex;
+          padding-left: 5rem;
+          background-color: $plan__free--cta;
+          justify-content: space-between;
+          cursor: default !important;
+          :hover{
+            
+          }
+
+          &--button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $plan__free-cta-btn;
+            height: 3rem;
+            font-size: 1.1rem;
+          }
+
+          .plan__free-content {
+            padding: 0.2rem;
+          }
+        }
+
+        &--description {
+          display: flex;
+        }
+
+        &--title {
+          display: flex;
+        }
+
+        .plans__free {
+          display: flex;
+          justify-content: space-between;
+          // background-color: #1555df81;
         }
       }
 
