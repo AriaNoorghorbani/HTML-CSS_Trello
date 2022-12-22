@@ -14,8 +14,10 @@ export interface DialogData {
 export class LandingPageComponent {
   @ViewChildren(MatMenuTrigger) trigger: QueryList<MatMenuTrigger>;
   highlight: any;
+  backdrop: boolean = false;
   openMenu(index: number) {
     this.trigger.toArray().forEach((item: MatMenuTrigger, i: number) => {
+      this.backdrop = true;
       this.highlight = item.openMenu;
       if (i !== index && item.menuOpen) {
         item.closeMenu();

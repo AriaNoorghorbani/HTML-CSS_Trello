@@ -1,5 +1,12 @@
 @import "../../main-styles.scss";
 
+.backdrop {
+  margin-top: 64px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000031;
+  position: fixed;
+}
 .container {
   min-width: 100vw;
   // height: 100vh;
@@ -153,17 +160,24 @@
   &--item {
     display: flex;
     height: 100%;
-    margin: 0rem 0rem 0rem 25rem;
+    // margin: 0rem 0rem 0rem 25rem;
     gap: 2rem;
+    min-width: 1200px;
+
+    .left-flex {
+      width: calc(680px + (100vw - 960px) / 2);
+    }
 
     &--left {
-      padding: 1.5rem 0 0 0;
-      width: 52%;
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem 0;
+      width: 640px;
+      // justify-items: flex-end;
+      // padding: 1.5rem 0 0 0;
+      // padding-left: 10%;
+      margin: 2rem 2.5rem 0rem auto;
+      gap: 1rem;
       color: $blue-navbar-text;
-
       h3 {
         font-weight: bold;
       }
@@ -171,7 +185,7 @@
       &--title {
         display: flex;
         flex-wrap: wrap;
-        gap: 1rem 0;
+        gap: 0rem 1rem;
         border-bottom: 1px solid #dfe1e6;
         max-height: 40px;
         min-width: 95%;
@@ -254,38 +268,48 @@
         font-size: 1.2rem;
       }
     }
-  }
 
-  &--right {
-    display: flex;
-    flex-direction: column;
+    &--right {
+      background-color: rgba(234, 230, 255, 0.4);
+      padding: 1.5rem 25rem 0 3rem;
+      // min-width: 700px;
+      height: 100%;
+      width: 20%;
+      width: calc(280px + (100vw - 960px) / 2);
+      hr {
+        height: 1px;
+        background-color: #585181;
+        border: none;
+        width: 200px;
+      }
 
-    a {
-      text-decoration: none;
-      color: $blue-navbar-text;
-    }
+      h3 {
+        font-weight: bold;
+      }
 
-    &--title {
-      font-size: 1rem;
-      font-weight: bold;
-    }
+      &--title {
+        color: $blue;
+        font-weight: bold;
+        min-width: 200px;
+      }
 
-    &--description {
-      font-size: 0.9rem;
-    }
+      &--content {
+        color: $blue-navbar-text;
+        min-width: 200px;
 
-    .test:first-of-type {
-      margin-top: 1.3rem;
-    }
+        p {
+          font-size: 0.8rem;
+        }
 
-    &--button {
-      margin: 1rem 0 0 0;
-      background-color: white;
-      color: $blue;
-      border: 1px solid $navbar-border;
+        button {
+          background-color: white;
+          color: $blue;
+          border: 1px solid $navbar-border;
 
-      &:hover {
-        background-color: $navbar-button-hover;
+          &:hover {
+            background-color: $navbar-button-hover;
+          }
+        }
       }
     }
   }
@@ -327,42 +351,6 @@
 }
 
 .navbar__menu--item--right {
-  background-color: rgba(234, 230, 255, 0.4);
-  padding: 1.5rem 25rem 0 3rem;
-  width: 48%;
-  height: 100%;
-  hr {
-    height: 1px;
-    background-color: #585181;
-    border: none;
-  }
-
-  h3 {
-    font-weight: bold;
-  }
-
-  &--title {
-    color: $blue;
-    font-weight: bold;
-  }
-
-  &--content {
-    color: $blue-navbar-text;
-
-    p {
-      font-size: 0.8rem;
-    }
-
-    button {
-      background-color: white;
-      color: $blue;
-      border: 1px solid $navbar-border;
-
-      &:hover {
-        background-color: $navbar-button-hover;
-      }
-    }
-  }
 }
 
 .navbar__menu--item--right--resources {
