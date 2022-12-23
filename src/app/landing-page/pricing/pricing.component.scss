@@ -1,3 +1,9 @@
+@import "../../../main-styles.scss";
+
+.container {
+  margin-top: 80px;
+  z-index: -10;
+}
 .title__top {
   margin: 2rem auto;
   text-align: center;
@@ -15,15 +21,91 @@
     font-size: 1.5rem;
   }
 }
-
-.price__plans {
-  display: flex;
-  width: 70%;
+.price__table {
+  width: 59%;
   margin: auto;
+}
+.price__plans {
+  display: grid;
+  border-left: 1.5px solid $price__border;
+  border-top: 1.5px solid $price__border;
+  border-bottom: 1.5px solid $price__border;
+  grid-template-areas:
+    "title" "title" "title" "title"
+    "price" "price" "price" "price"
+    "detail" "detail" "detail" "detail"
+    "suitable" "suitable" "suitable" "suitable"
+    "cta" "cta" "cta" "cta"
+    "fields" "fields" "fields" "fields"
+    "link" "link" "link" "link";
+}
 
-  .plan {
-    width: 25%;
-    height: 100%;
-    border: 1px solid rebeccapurple;
+.title {
+  grid-row: "title";
+  border-right: 1.5px solid $price__border;
+  padding: 1rem 0.8rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.price {
+  grid-row: price;
+  border-right: 1.5px solid $price__border;
+  padding: 1rem 0.8rem 0 0.8rem;
+  margin: 0;
+  font-size: 1rem;
+
+  .num {
+    font-size: 3rem;
   }
+}
+
+.detail {
+  grid-row: detail;
+  border-right: 1.5px solid $price__border;
+  margin: 0;
+  padding: 0rem 0.8rem;
+  font-size: 0.75rem;
+  color: $navbar__right--title;
+}
+
+.suitable {
+  grid-row: suitable;
+  border-right: 1.5px solid $price__border;
+  margin: 0;
+  padding: 1rem 0.8rem;
+}
+
+.cta {
+  grid-row: cta;
+  border-right: 1.5px solid $price__border;
+  margin: 0;
+  padding: 1rem 0.8rem;
+  text-decoration: none;
+}
+
+.fields {
+  border-right: 1.5px solid $price__border;
+  padding: 1rem 1.2rem;
+  grid-row: fields;
+  p::before {
+    content: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.73534 4.3223C1.36105 3.91618 0.728414 3.89038 0.3223 4.26467C-0.0838134 4.63895 -0.109615 5.27159 0.264671 5.6777L3.87678 9.59697C4.41431 10.1231 5.21446 10.1231 5.71114 9.62638C5.7724 9.56623 5.7724 9.56623 6.07539 9.26827C6.36994 8.97855 6.69814 8.65556 7.05157 8.3075C8.06144 7.31303 9.07132 6.31689 10.014 5.38477L10.0543 5.34489C11.7291 3.68869 13.0004 2.42365 13.712 1.70223C14.0998 1.30904 14.0954 0.675886 13.7022 0.288053C13.309 -0.0997796 12.6759 -0.0954305 12.2881 0.297767C11.5843 1.01131 10.3169 2.27244 8.648 3.92281L8.60773 3.96263C7.66616 4.89368 6.65722 5.88889 5.64826 6.88247C5.35784 7.16847 5.08449 7.43752 4.83288 7.68506L1.73534 4.3223Z' fill='%2336b37e'/%3E%3C/svg%3E%0A");
+  }
+
+  &__item {
+    border-top: 1.5px solid $price__border;
+
+    &--title {
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}
+.link {
+  grid-row: link;
+  border-right: 1.5px solid $price__border;
+  margin: 0;
+  padding: 1rem 0.8rem;
+  text-align: center;
 }
