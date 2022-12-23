@@ -647,3 +647,151 @@
 
     </table>
   </div>
+
+  <div class="looking-for">
+    <h1 class="looking-for__title">Didn’t find what you were looking for?</h1>
+    <button mat-stroked-button class="cta__btn" id="suggestion-btn">Make a suggestion</button>
+    <h1 class="frequency">Frequently asked questions</h1>
+  </div>
+
+  <div class="expansion">
+
+    <mat-accordion>
+      <mat-expansion-panel hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState == false">+</div>
+            <div class="negative" *ngIf="panelOpenState == true">-</div>
+            Does Trello offer a Premium free trial?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>We sure do. All users can enroll their Workspace in a free trial of Trello Premium. With that trial your
+          Workspace will get access to create unlimited Trello boards, automate as much as you’d like, take advantage of
+          Timeline, Dashboard, and other new views, and much more!</p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)="panelOpenState2 = true" (closed)="panelOpenState2 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState2 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState2 == true">-</div>
+            Do you offer any discounted plans?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Yes! Trello offers both a non-profit community discount as well as an education discount.</p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)=" panelOpenState3=true" (closed)="panelOpenState3 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState3 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState3 == true">-</div>
+            What payment methods do you accept?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>You can purchase a monthly or annual Trello Standard or Premium subscription with any major credit
+          card. We
+          offer more options for Enterprise customers, if you’re interested in learning more about Trello
+          Enterprise
+          contact our sales team.</p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)="panelOpenState4 = true" (closed)="panelOpenState4 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState4 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState4 == true">-</div>
+            How do I cancel my Trello Standard or Premium subscription?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>If you aren’t 100% satisfied with Trello Standard or Premium you may downgrade at any time. When a team
+          downgrades from Standard or Premium, it retains its Standard or Premium features and unlimited boards until
+          the end of its prepaid service period. At the end of its prepaid service period, it becomes a free Trello
+          Workspace that can hold 10 boards. Learn more about canceling your Standard or Premium subscription here.</p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)="panelOpenState5 = true" (closed)="panelOpenState5 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState5 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState5 == true">-</div>
+            How are users counted towards billing?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>A Trello user who is added as a member to a Workspace—either as a normal member or as a team admin—is
+          considered a billable team member that is included in the cost of Trello Standard or Premium.
+
+          Any Guest that is on more than one board within the Workspace is considered a Multi-Board Guest and is billed
+          at the same rate as Standard or Premium Workspace members. See this page for more information on Multi-Board
+          Guests.</p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)="panelOpenState6 = true" (closed)="panelOpenState6 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState6 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState6 == true">-</div>
+            Is there an on-premises version of Trello?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Trello is proudly a cloud-only product. We offer access via the web, desktop, and our awesome mobile apps.
+        </p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)="panelOpenState7 = true" (closed)="panelOpenState7 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState7 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState7 == true">-</div>
+            Can I have Trello Standard or Premium just for my own account?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Trello Standard and Premium are designed for all teams—even teams of one! To upgrade to Standard or Premium
+          you’ll need to create a Workspace and then upgrade that Workspace.</p>
+      </mat-expansion-panel>
+      <hr>
+      <mat-expansion-panel (opened)="panelOpenState8 = true" (closed)="panelOpenState8 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div class="negative" *ngIf="panelOpenState8 == false">+</div>
+            <div class="negative" *ngIf="panelOpenState8 == true">-</div>
+            How secure is Trello?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>Trello, Inc. (“we”, “us” or “our”) is SOC2 Type 2 certified—we receive and review our data hosting providers’
+          SOC1 and SOC2 reports every 6 months under NDA. Trello is ISO/IEC 27001 certified which validates our
+          information security management system (ISMS) and the implementation of our security controls. More
+          information is available on the Atlassian Trust Management System. Trello is PCI-DSS certified. Learn more
+          about Trello’s security protocols here.</p>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+  </div>
+
+  <div class="pricing__bottom">
+    <div class="image">
+      <img
+        src="https://images.ctfassets.net/rz1oowkt5gyp/3oImeBPuXSABEX9sc9qyQ6/2f8a0d5d3231aa4831387726995028f2/TREL-210_Trello_Access_Spot_Illo.svg"
+        alt="">
+    </div>
+    <div class="content">
+      <h3>
+        Best-in-class security and centralized administration with Atlassian Access
+      </h3>
+      <ul>
+        <li>SAML single sign-on</li>
+        <li>Enforced 2FA</li>
+      </ul>
+      <p>
+        Atlassian Access is a separate subscription that your company can enable across all your Atlassian products and
+        starts at $4/month/user. Trello is an Atlassian product.
+      </p>
+      <br>
+      <button mat-stroked-button class="cta__btn bottom-btn">Learn more</button>
+    </div>
+  </div>
+
+
+
+</div>

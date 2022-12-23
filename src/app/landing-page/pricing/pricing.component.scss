@@ -2,6 +2,9 @@
 
 .container {
   min-width: 990px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .title__top {
   margin: 4rem auto;
@@ -211,6 +214,110 @@
 
     h4 {
       margin: 0;
+    }
+  }
+}
+
+.looking-for {
+  text-align: center;
+  margin-top: 3rem;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+  }
+}
+
+#suggestion-btn {
+  margin: 0;
+}
+
+.frequency {
+  margin-top: 2.9rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+mat-expansion-panel {
+  background-color: white !important;
+  color: black !important;
+  font-size: 3rem !important;
+
+  p {
+    font-size: 1.15rem;
+    line-height: 1.6rem;
+  }
+}
+
+mat-panel-title {
+  color: rgb(61, 61, 61) !important;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.expansion {
+  hr {
+    margin: 0 2rem;
+    padding: 0 2rem;
+    overflow: hidden;
+    color: #4fbd8e;
+  }
+}
+
+::ng-deep .mat-expansion-panel-header,
+.mat-panel-title {
+  height: 5rem !important;
+  align-items: flex-start;
+}
+
+::ng-deep .mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.negative {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.pricing__bottom {
+  display: flex;
+  height: 407px;
+  width: 100vw;
+  align-items: center;
+  padding: 1rem 9rem 5rem 9rem;
+
+  background: linear-gradient(rgb(230, 252, 255), rgb(255, 255, 255)) no-repeat;
+
+  .image {
+    display: flex;
+    width: 35%;
+    height: 65%;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    ul {
+      font-size: 1.3rem;
+      line-height: 1.9rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .bottom-btn {
+      width: 6.4rem !important;
+      padding: 1.5px 0 3px 0;
     }
   }
 }

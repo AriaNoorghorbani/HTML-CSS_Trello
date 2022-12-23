@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-pricing',
@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./pricing.component.scss'],
 })
 export class PricingComponent {
-  max = 100;
-  min = 0;
-  showTicks = false;
-  step = 1;
-  thumbLabel = false;
-  value = 0;
+  panelOpenState = false;
+  panelOpenState2 = false;
+  panelOpenState3 = false;
+  panelOpenState4 = false;
+  panelOpenState5 = false;
+  panelOpenState6 = false;
+  panelOpenState7 = false;
+  panelOpenState8 = false;
 }
