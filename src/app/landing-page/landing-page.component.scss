@@ -459,6 +459,14 @@
         transition: 0.2s alternate;
       }
     }
+
+    &:hover {
+      .svg-peykan {
+        transform: translateX(6px);
+        transition-duration: 200ms;
+        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
   }
 }
 

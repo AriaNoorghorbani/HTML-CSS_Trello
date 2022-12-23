@@ -33,6 +33,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './landing-page/sign-up/sign-up.component';
 import { PricingComponent } from './landing-page/pricing/pricing.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { PricingComponent } from './landing-page/pricing/pricing.component';
     MatListModule,
     MatExpansionModule,
     MatMenuModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

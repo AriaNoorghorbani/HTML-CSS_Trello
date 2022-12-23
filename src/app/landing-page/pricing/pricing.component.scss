@@ -5,7 +5,8 @@
   z-index: -10;
 }
 .title__top {
-  margin: 2rem auto;
+  margin: 4rem auto;
+  padding-top: 3rem;
   text-align: center;
   width: 41rem;
   h1 {
@@ -28,7 +29,7 @@
 .price__plans {
   display: grid;
   border-left: 1.5px solid $price__border;
-  border-top: 1.5px solid $price__border;
+  // border-top: 1.5px solid $price__border;
   border-bottom: 1.5px solid $price__border;
   grid-template-areas:
     "title" "title" "title" "title"
@@ -38,8 +39,26 @@
     "cta" "cta" "cta" "cta"
     "fields" "fields" "fields" "fields"
     "link" "link" "link" "link";
-}
 
+  #plan__premium--title {
+    border-top: 2px solid $price__btn;
+    border-right: 2px solid $price__btn;
+    border-left: 2px solid $price__btn;
+  }
+  #plan__enterprise {
+    border-top: 1.5px solid $price__border;
+  }
+  #plan__standard {
+    border-top: 1.5px solid $price__border;
+  }
+  #plan__free {
+    border-top: 1.5px solid $price__border;
+  }
+}
+.plan__premium--both {
+  border-right: 2px solid $price__btn;
+  border-left: 2px solid $price__btn;
+}
 .title {
   grid-row: "title";
   border-right: 1.5px solid $price__border;
@@ -77,11 +96,35 @@
 }
 
 .cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   grid-row: cta;
   border-right: 1.5px solid $price__border;
   margin: 0;
   padding: 1rem 0.8rem;
   text-decoration: none;
+
+  &__btn {
+    margin-left: 1rem;
+    background-color: white;
+    border: 1px solid $price__btn;
+    color: $navbar__right--title;
+    scale: 1.2;
+    font-size: 0.85rem;
+
+    &:hover {
+      background-color: $price__btn--hover;
+    }
+  }
+
+  #price-free {
+    background-color: $price__btn--hover;
+
+    &:hover {
+      background-color: white;
+    }
+  }
 }
 
 .fields {
@@ -106,6 +149,16 @@
   grid-row: link;
   border-right: 1.5px solid $price__border;
   margin: 0;
-  padding: 1rem 0.8rem;
+  padding: 1rem 0.8rem 1.8rem 0.8rem;
   text-align: center;
+  font-size: 1rem;
+}
+
+.plan__premium--both {
+  border-right: 2px solid $price__btn;
+  border-left: 2px solid $price__btn;
+}
+
+#link__premium {
+  border-bottom: 2px solid $price__btn;
 }
