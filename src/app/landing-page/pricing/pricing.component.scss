@@ -177,3 +177,40 @@
   justify-content: center;
   align-items: center;
 }
+
+.compare-plan {
+  // width: vw;
+  table {
+    min-width: 928px;
+    width: 100%;
+    th,
+    td {
+      padding: 1rem;
+      border: 1px solid $price__border;
+      border-left: none;
+    }
+
+    td {
+      text-align: center;
+    }
+    .tick-mark {
+      color: #4fbd8e;
+      scale: 1.4;
+    }
+
+    th {
+      max-width: 530px;
+    }
+
+    .table-head {
+      border: none;
+    }
+    a {
+      font-size: 1rem;
+    }
+
+    h4 {
+      margin: 0;
+    }
+  }
+}
