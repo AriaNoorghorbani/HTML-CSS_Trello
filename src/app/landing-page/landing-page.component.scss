@@ -9,15 +9,18 @@
 }
 
 .container {
+  background-color: #ffffff !important;
+  display: inline;
   min-width: 100vw;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
   padding: 0;
   margin: 0;
+  position: fixed;
 }
 
 .navbar {
-  position: fixed;
+  // position: relative;
   display: flex;
   justify-content: flex-start;
   z-index: 1100;
