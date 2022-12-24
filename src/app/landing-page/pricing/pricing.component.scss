@@ -109,7 +109,6 @@
   text-decoration: none;
 
   &__btn {
-    z-index: -1;
     margin-left: 1rem;
     background-color: white;
     border: 1px solid $price__btn;
@@ -172,7 +171,6 @@
 }
 
 .title__compare {
-  z-index: -1;
   h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -185,7 +183,6 @@
 }
 
 .compare-plan {
-  z-index: -1;
   table {
     min-width: 928px;
     width: 100%;
@@ -259,7 +256,6 @@ mat-panel-title {
 }
 
 .expansion {
-  z-index: -1;
   hr {
     margin: 0 2rem;
     padding: 0 2rem;
@@ -481,8 +477,4 @@ mat-panel-title {
       margin: 7px 8px;
     }
   }
-}
-
-.asb {
-  z-index: 10000;
 }
