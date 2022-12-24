@@ -38,6 +38,38 @@
       margin-bottom: 0.5rem;
     }
 
+    &--form {
+      min-width: 360px !important;
+      max-width: 500px;
+      font-size: 1.5rem;
+      color: rgb(12, 12, 12);
+    }
+
+    &--input {
+      background-color: rgb(255, 255, 255);
+      border: 2px solid white;
+      border-radius: 10px;
+      height: 2.8rem;
+      width: 30rem;
+    }
+
+    mat-label {
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      color: #000000d2;
+    }
+    ::ng-deep .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-focused .placeholder {
+      color: #000000 !important;
+    }
+
+    .mat-input-element::placeholder {
+      color: rgb(0, 0, 0);
+    }
+
     .wave__btn {
       width: 9.5rem;
       background-color: $light-blue;
@@ -47,6 +79,24 @@
         background-color: $dark-blue;
       }
     }
+    a {
+      color: rgb(233, 224, 224);
+      margin-top: 1.5rem;
+      font-size: 1rem;
+
+      &:hover {
+        color: white;
+
+        .svg-play {
+          transform: translateX(6px);
+          transition-duration: 200ms;
+        }
+      }
+
+      .svg-play {
+        margin-left: 0.5rem;
+      }
+    }
   }
 
   &__right {
@@ -54,4 +104,8 @@
     width: 30%;
     max-height: 610px;
   }
+}
+
+mat-form-field {
+  min-width: 500px !important;
 }
