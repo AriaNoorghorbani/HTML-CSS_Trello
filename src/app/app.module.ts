@@ -29,10 +29,10 @@ import { MatListModule } from '@angular/material/list';
 import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/column-delete-dialog.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MainTaskComponent } from './main-task/main-task.component';
-import { TopMenuComponent } from './landing-page/top-menu.component';
+import { TopMenuComponent } from './pages/top-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
-import { SignUpComponent } from './landing-page/sign-up/sign-up.component';
-import { PricingComponent } from './landing-page/pricing/pricing.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
 import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
