@@ -325,7 +325,7 @@ mat-panel-title {
 .footer {
   display: flex;
   flex-direction: column;
-  height: 209px;
+  height: 195px;
   background-color: rgb(23, 43, 77);
   width: 99vw;
   margin: 0 79px;
@@ -334,6 +334,7 @@ mat-panel-title {
 
   &__container {
     display: flex;
+    height: 69%;
   }
 
   .bottom-icon {
@@ -351,7 +352,12 @@ mat-panel-title {
       text-decoration: none;
       color: white;
       margin-top: 1rem;
-      font-size: 1rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
     &__svg {
       display: flex;
@@ -360,14 +366,14 @@ mat-panel-title {
   }
 
   &__card {
-    width: 192px;
-    height: 114px;
-    padding: 0.7rem 1rem;
+    width: 195px;
+    height: 100px;
+    padding: 0.6rem 0.9rem;
     margin: 1rem 1rem 0 1rem;
     text-decoration: none;
     cursor: pointer;
     color: rgb(216, 216, 216);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 
     &:hover {
       background-color: rgb(52, 69, 99);
@@ -386,19 +392,18 @@ mat-panel-title {
     border-bottom: 1px solid rgb(145, 145, 145);
   }
 
-  .footer__bottom {
+  &__bottom {
     display: flex;
-    height: 200px;
-    width: 1060px;
+    height: 31%;
+    width: 1090px;
     background-color: #172b4d;
   }
 }
 
 .copyright {
   display: flex;
-  margin-top: 1.5rem;
   width: 100%;
-  justify-items: center;
+  align-items: center;
   .english {
     display: flex;
     width: 17%;
@@ -422,29 +427,32 @@ mat-panel-title {
 
   &__links {
     display: flex;
-    width: 50%;
+    width: 30%;
 
     a {
       text-decoration: none;
       color: rgb(216, 216, 216);
-      margin: 0 1rem;
+      margin: 0 0.9rem;
       &:hover {
         text-decoration: underline;
         font-weight: 500;
       }
     }
+  }
 
-    div {
-      text-decoration: none;
-      color: rgb(216, 216, 216);
-      margin: 0 1rem;
-    }
+  &__year {
+    display: flex;
+    width: 20%;
+    text-decoration: none;
+    color: rgb(216, 216, 216);
+    margin: 0 1rem;
   }
 
   &__logo {
     display: flex;
     width: 33%;
-    justify-content: center;
+    justify-content: flex-end;
+    scale: 0.9;
 
     .circle {
       width: 35px;
@@ -463,6 +471,8 @@ mat-panel-title {
 
     .logo {
       margin: 7px 6px;
+      display: flex;
+      align-content: center;
     }
 
     #facebook {
