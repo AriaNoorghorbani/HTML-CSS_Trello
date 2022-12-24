@@ -29,7 +29,7 @@ import { MatListModule } from '@angular/material/list';
 import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/column-delete-dialog.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MainTaskComponent } from './main-task/main-task.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { TopMenuComponent } from './landing-page/top-menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './landing-page/sign-up/sign-up.component';
 import { PricingComponent } from './landing-page/pricing/pricing.component';
@@ -48,7 +48,7 @@ import { MatSliderModule } from '@angular/material/slider';
     NewListComponent,
     ColumnEditDialogComponent,
     MainTaskComponent,
-    LandingPageComponent,
+    TopMenuComponent,
     SignUpComponent,
     PricingComponent,
   ],

@@ -7,11 +7,11 @@ export interface DialogData {
 }
 
 @Component({
-  selector: 'app-landing-page',
-  templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.scss'],
+  selector: 'top-menu',
+  templateUrl: './top-menu.component.html',
+  styleUrls: ['./top-menu.component.scss'],
 })
-export class LandingPageComponent {
+export class TopMenuComponent {
   @ViewChildren(MatMenuTrigger) trigger: QueryList<MatMenuTrigger>;
   highlight: any;
   backdrop: boolean = false;
