@@ -34,6 +34,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MatSliderModule } from '@angular/material/slider';
     TopMenuComponent,
     SignUpComponent,
     PricingComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
