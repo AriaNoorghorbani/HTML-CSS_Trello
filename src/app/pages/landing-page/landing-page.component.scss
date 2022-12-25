@@ -1,14 +1,19 @@
 @import "../../../main-styles.scss";
 .container {
   max-width: 100vw;
+  height: 100%;
   margin: 0;
   padding: 0;
-  position: fixed;
+  // position: fixed;
 }
 
+.top-menu {
+  position: fixed;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 .wave {
-  margin-top: 60px;
-  padding-top: 4.3rem;
+  padding-top: 6.3rem;
   height: 700px;
   background: url("https://images.ctfassets.net/rz1oowkt5gyp/7lTGeXbBRNRLaVk2MdBjtJ/99c266ed4cb8cc63bd0c388071f01ff6/white-wave-bg.svg")
       center bottom -0.5px / 100% 14% no-repeat scroll padding-box border-box,
@@ -18,7 +23,7 @@
 
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
 
   &__left {
     display: flex;
@@ -103,9 +108,131 @@
     display: flex;
     width: 30%;
     max-height: 610px;
+    // min-width: 300px;
+
+    .wave-img {
+      display: flex;
+      min-width: 650px;
+      background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/75rDABL8fyMtNLlUAtBxrg/c5e145977a86c41c47e17c69410c64f7/TrelloUICollage_4x.png?w=1140&fm=webp);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 }
 
 mat-form-field {
   min-width: 500px !important;
+}
+
+.wave__bottom {
+  display: flex;
+  width: 61%;
+  min-width: 60rem;
+  margin: auto;
+
+  .content {
+    display: flex;
+    margin-bottom: 1.5rem;
+    width: 55%;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0 0 0.7rem 0;
+      color: #181818;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: #181818;
+    }
+  }
+}
+
+.wave__slider {
+  height: 630px;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(0deg, rgb(230, 252, 255), rgb(255, 255, 255)) 0%
+    0% / auto repeat rgb(178, 212, 255);
+
+  .slider__box {
+    display: flex;
+    gap: 1.5rem;
+    width: 61%;
+    min-width: 63rem;
+    height: 85%;
+    display: flex;
+    margin: 0 auto;
+
+    &--row {
+      display: flex;
+      flex-direction: column;
+      width: 35%;
+      height: 100%;
+
+      h2 {
+        font-size: 1rem;
+        margin-bottom: 0.1rem;
+      }
+
+      h3 {
+        line-height: 1.4rem;
+        z-index: 1;
+      }
+
+      .row-card {
+        min-width: 347px;
+        border-radius: 0.4rem;
+        margin: 0.65rem;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        box-shadow: 1px 3px 12px 5px rgba($color: #000000, $alpha: 0.15);
+        background: linear-gradient(
+          to left,
+          rgb(255, 255, 255) 97.5%,
+          rgb(0, 199, 229) 75%
+        );
+        .left-content {
+          max-height: 33%;
+          padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+          z-index: 2;
+          // background: linear-gradient(
+          //   to left,
+          //   rgb(0, 199, 229),
+          //   rgb(255, 255, 255)
+          // );
+        }
+
+        .left-blue {
+          width: 0.5rem;
+          height: 100%;
+          // background-color: rgb(0, 199, 229);
+          position: absolute;
+
+          top: 0;
+          z-index: -1;
+        }
+      }
+    }
+
+    &--img {
+      min-width: 728px;
+      // background-color: #b61313;
+      max-height: 94%;
+      background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/26CA6JZeRgoOK4nuRHnIlY/060702a80cf7c3be3651d9297d196267/Carousel_Image_Cards_2x.png?w=960&fm=webp);
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.7rem;
+    }
+  }
 }
