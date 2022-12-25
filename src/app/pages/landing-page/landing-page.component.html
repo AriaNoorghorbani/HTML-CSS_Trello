@@ -42,7 +42,7 @@
     <div class="slider__box">
       <div class="slider__box--row">
 
-        <div class="boards row-card">
+        <div class="boards row-card" (click)="onActive('boards')" [class.active]="activatedCard === 'boards'">
           <div class="left-content">
             <h2>Boards</h2>
             <h3>Trello boards keep tasks organized and work moving forward. In a glance, see everything from “things to
@@ -51,7 +51,7 @@
           <div class="left-blue"></div>
         </div>
 
-        <div class="lists row-card">
+        <div class="lists row-card" (click)="onActive('lists')" [class.active]="activatedCard === 'lists'">
           <div class="left-content">
             <h2>Lists</h2>
             <h3>The different stages of a task. Start as simple as To Do, Doing or Done—or build a workflow custom fit
@@ -61,16 +61,17 @@
           <div class="left-blue"></div>
         </div>
 
-        <div class="cards row-card">
+        <div class="cards row-card" (click)="onActive('cards')" [class.active]="activatedCard === 'cards'">
           <div class="left-content">
             <h2>Cards</h2>
             <h3>Cards represent tasks and ideas and hold all the information to get the job done. As you make progress,
               move cards across lists to show their status.</h3>
           </div>
         </div>
-
       </div>
-      <div class="slider__box--img"></div>
+      <div [class.slider__box--img--boards]="activatedCard === 'boards'"
+        [class.slider__box--img--lists]="activatedCard === 'lists'"
+        [class.slider__box--img--cards]="activatedCard === 'cards'"></div>
     </div>
   </div>
 

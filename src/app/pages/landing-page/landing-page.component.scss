@@ -191,8 +191,17 @@ mat-form-field {
 
       .row-card {
         min-width: 347px;
+        cursor: pointer;
         border-radius: 0.4rem;
-        margin: 0.65rem;
+        margin: 0.4rem 0.65rem;
+        .left-content {
+          max-height: 33%;
+          padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+          z-index: 2;
+        }
+      }
+
+      .active {
         position: relative;
         z-index: 1;
         overflow: hidden;
@@ -202,32 +211,35 @@ mat-form-field {
           rgb(255, 255, 255) 97.5%,
           rgb(0, 199, 229) 75%
         );
-        .left-content {
-          max-height: 33%;
-          padding: 0.5rem 0.8rem 0.5rem 1.2rem;
-          z-index: 2;
-          // background: linear-gradient(
-          //   to left,
-          //   rgb(0, 199, 229),
-          //   rgb(255, 255, 255)
-          // );
-        }
 
         .left-blue {
           width: 0.5rem;
           height: 100%;
-          // background-color: rgb(0, 199, 229);
           position: absolute;
-
           top: 0;
           z-index: -1;
         }
       }
     }
 
-    &--img {
+    &--img--boards {
       min-width: 728px;
-      // background-color: #b61313;
+      max-height: 94%;
+      background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/3N2U3C71rApm61cGFxnc2E/970b010002488a09a420282df5e7b43a/Carousel_Image_Boards_2x.png?w=1140&fm=webp);
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.7rem;
+    }
+    &--img--lists {
+      min-width: 728px;
+      max-height: 94%;
+      background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/4U0VUZYX2tQmB5KVGxBabp/7321ac088fe8ec39dbe3069c47d7df99/Carousel_Image_Lists_2x.png?w=960&fm=webp);
+      background-size: cover;
+      background-position: center;
+      border-radius: 0.7rem;
+    }
+    &--img--cards {
+      min-width: 728px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/26CA6JZeRgoOK4nuRHnIlY/060702a80cf7c3be3651d9297d196267/Carousel_Image_Cards_2x.png?w=960&fm=webp);
       background-size: cover;
