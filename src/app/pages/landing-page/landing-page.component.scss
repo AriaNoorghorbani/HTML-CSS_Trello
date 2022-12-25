@@ -167,7 +167,7 @@ mat-form-field {
   .slider__box {
     display: flex;
     gap: 1.5rem;
-    width: 61%;
+    width: 65%;
     min-width: 63rem;
     height: 85%;
     display: flex;
@@ -225,18 +225,23 @@ mat-form-field {
       }
     }
 
+    .box-img {
+      display: flex;
+      width: 100%;
+    }
+
     &--img--boards {
       animation: slider-boards 600ms;
-      min-width: 728px;
+      min-width: 660px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/3N2U3C71rApm61cGFxnc2E/970b010002488a09a420282df5e7b43a/Carousel_Image_Boards_2x.png?w=1140&fm=webp);
       background-size: cover;
-      background-position: center;
+      background-position: top;
       border-radius: 0.7rem;
     }
     &--img--lists {
       animation: slider-lists 600ms;
-      min-width: 728px;
+      min-width: 660px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/4U0VUZYX2tQmB5KVGxBabp/7321ac088fe8ec39dbe3069c47d7df99/Carousel_Image_Lists_2x.png?w=960&fm=webp);
       background-size: cover;
@@ -245,7 +250,7 @@ mat-form-field {
     }
     &--img--cards {
       animation: slider-card 600ms;
-      min-width: 728px;
+      min-width: 660px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/26CA6JZeRgoOK4nuRHnIlY/060702a80cf7c3be3651d9297d196267/Carousel_Image_Cards_2x.png?w=960&fm=webp);
       background-size: cover;
