@@ -177,7 +177,7 @@ mat-form-field {
       display: flex;
       flex-direction: column;
       width: 35%;
-      height: 100%;
+      height: 94%;
 
       h2 {
         font-size: 1rem;
@@ -193,11 +193,14 @@ mat-form-field {
         min-width: 347px;
         cursor: pointer;
         border-radius: 0.4rem;
-        margin: 0.4rem 0.65rem;
+        margin: 0.5rem 0.8rem;
+
         .left-content {
           max-height: 33%;
-          padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+          padding: 0.6rem 1.1rem 0.5rem 1.4rem;
           z-index: 2;
+          text-align: justify;
+          text-justify: inter-word;
         }
       }
 
@@ -223,6 +226,7 @@ mat-form-field {
     }
 
     &--img--boards {
+      animation: slider-boards 600ms;
       min-width: 728px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/3N2U3C71rApm61cGFxnc2E/970b010002488a09a420282df5e7b43a/Carousel_Image_Boards_2x.png?w=1140&fm=webp);
@@ -231,6 +235,7 @@ mat-form-field {
       border-radius: 0.7rem;
     }
     &--img--lists {
+      animation: slider-lists 600ms;
       min-width: 728px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/4U0VUZYX2tQmB5KVGxBabp/7321ac088fe8ec39dbe3069c47d7df99/Carousel_Image_Lists_2x.png?w=960&fm=webp);
@@ -239,6 +244,7 @@ mat-form-field {
       border-radius: 0.7rem;
     }
     &--img--cards {
+      animation: slider-card 600ms;
       min-width: 728px;
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/26CA6JZeRgoOK4nuRHnIlY/060702a80cf7c3be3651d9297d196267/Carousel_Image_Cards_2x.png?w=960&fm=webp);
@@ -246,5 +252,31 @@ mat-form-field {
       background-position: center;
       border-radius: 0.7rem;
     }
+  }
+}
+
+@keyframes slider-boards {
+  0% {
+    background-position: -150px;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+@keyframes slider-lists {
+  0% {
+    background-position: -150px;
+  }
+  100% {
+    background-position: center;
+  }
+}
+@keyframes slider-card {
+  0% {
+    background-position: -150px;
+  }
+  100% {
+    background-position: center;
   }
 }
