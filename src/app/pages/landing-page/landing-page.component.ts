@@ -9,6 +9,7 @@ export class LandingPageComponent implements OnInit {
   constructor() {}
 
   activatedCard: string = 'boards';
+  workflowCard: string = 'right';
   xposition: string = '0';
 
   ngOnInit(): void {}
@@ -21,5 +22,9 @@ export class LandingPageComponent implements OnInit {
 
   onSliderScroll() {
     this.xposition = '200px';
+  }
+
+  onChangeSide(side: string) {
+    this.workflowCard = side;
   }
 }

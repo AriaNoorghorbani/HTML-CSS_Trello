@@ -292,10 +292,14 @@ mat-form-field {
   height: 100%;
   overflow: hidden !important;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 
   &__title {
+    overflow: hidden !important;
     margin-left: 17%;
     margin: 2rem 0 0 0;
+
     h3 {
       margin-left: 17%;
       font-weight: 500;
@@ -307,19 +311,61 @@ mat-form-field {
       font-size: 2.2rem;
       font-weight: 500;
     }
-    overflow: hidden !important;
   }
 
   &__slider {
     display: flex;
-    margin-left: 17%;
+    flex-direction: column;
+    // margin-left: 17%;
     width: 2200px;
     height: 276px;
     overflow: hidden !important;
+
+    &--cards {
+      display: flex;
+    }
+
+    &--scroll {
+      max-width: 1000px;
+      display: flex;
+      justify-content: flex-end;
+
+      .next-slide {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50px;
+        border: none;
+        margin-right: 1.5rem;
+        &-svg {
+          width: 1.2rem;
+          height: 1.2rem;
+          border: none;
+          background: url("https://alinamakarova.ru/bitrix/templates/alina_super_new/img/svg/slider-arrow-prev.svg        ");
+          background-repeat: no-repeat;
+        }
+      }
+      .back-slide {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50px;
+        border: none;
+
+        &-svg {
+          width: 1.2rem;
+          height: 1.2rem;
+          border: none;
+          background: url("https://alinamakarova.ru/bitrix/templates/alina_super_new/img/svg/slider-arrow-next.svg");
+          background-repeat: no-repeat;
+        }
+      }
+    }
   }
 
-  .workflow-card {
-    min-width: 347px;
+  .workflow-card-left {
+    transform: translateX(-740px);
+    transition-duration: 600ms;
+    position: relative;
+    min-width: 357px;
     max-height: 276px;
     margin: 1rem;
     padding: 3rem 0;
@@ -327,7 +373,82 @@ mat-form-field {
     background: linear-gradient(red 48px, rgb(255, 255, 255) 9%);
     border-radius: 0.6rem;
     overflow: hidden !important;
+
+    .content {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+      padding: 0.45rem;
+      position: absolute;
+      background-color: white;
+      border-radius: 0.4rem;
+      top: 1.4rem;
+      left: 1.3rem;
+
+      #icon-project {
+        width: 100%;
+        height: 100%;
+        background: url("//images.ctfassets.net/rz1oowkt5gyp/5Oc1c9iIDmXtUFHs0uWuLQ/7c46420a9b2127fc24b6e53445dda44f/UseCasesProjectManagement.svg");
+        background-size: cover;
+      }
+      #icon-brain {
+        width: 100%;
+        height: 100%;
+        background: url("//images.ctfassets.net/rz1oowkt5gyp/x2AI5JZPTDVY7BxKbvClM/dc65b20bf0914caa72bcaf2ddbb05d9b/UseCasesBrainstorming.svg");
+        background-size: cover;
+      }
+      #icon-meeting {
+        width: 100%;
+        height: 100%;
+        background: url("//images.ctfassets.net/rz1oowkt5gyp/5j0J5BEzFktzLYnsszcJWc/6f874662a4391c035f447662f978a928/UseCasesMeetings.svg");
+        background-size: cover;
+      }
+      #icon-task {
+        width: 100%;
+        height: 100%;
+        background: url("//images.ctfassets.net/rz1oowkt5gyp/4Mgm4SG6P6bD673rMtNpXP/371b9c1a650eeb2de13861c7ed39f7fe/UseCasesTaskManagement.svg");
+        background-size: cover;
+      }
+      #icon-crm {
+        width: 100%;
+        height: 100%;
+        background: url("//images.ctfassets.net/rz1oowkt5gyp/1bAaKPCUsUUfZ0ISolxQ6F/ae29cebe506fa6a07f508372504ad680/icon-object-id.svg");
+        background-size: cover;
+      }
+      #icon-editorial {
+        width: 100%;
+        height: 100%;
+        background: url("//images.ctfassets.net/rz1oowkt5gyp/2QxxxQ4YT8zNA3pGQafzpu/d5c750e8f37e8a77bfdb661aff2f2df6/icon-content-calendar.svg");
+        background-size: cover;
+      }
+    }
+  }
+
+  .workflow-card-right {
+    transform: translateX(310px);
+    transition-duration: 600ms;
     position: relative;
+    // left: 310px;
+    min-width: 357px;
+    max-height: 276px;
+    margin: 1rem;
+    padding: 3rem 0;
+    box-shadow: 1px 3px 12px 5px rgba($color: #000000, $alpha: 0.15);
+    background: linear-gradient(red 48px, rgb(255, 255, 255) 9%);
+    border-radius: 0.6rem;
+    overflow: hidden !important;
 
     .content {
       padding: 1.5rem;
