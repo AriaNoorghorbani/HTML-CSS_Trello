@@ -9,10 +9,17 @@ export class LandingPageComponent implements OnInit {
   constructor() {}
 
   activatedCard: string = 'boards';
+  xposition: string = '0';
 
   ngOnInit(): void {}
 
   onActive(item: string) {
     this.activatedCard = item;
+    let firstName = 'asb';
+    let lastName = 'gav';
+  }
+
+  onSliderScroll() {
+    this.xposition = '200px';
   }
 }
