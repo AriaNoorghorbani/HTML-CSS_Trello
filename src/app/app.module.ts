@@ -35,6 +35,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { FooterComponent } from './pages/sections/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     SignUpComponent,
     PricingComponent,
     LandingPageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
