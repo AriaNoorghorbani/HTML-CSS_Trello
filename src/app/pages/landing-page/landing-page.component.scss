@@ -237,7 +237,7 @@ mat-form-field {
       max-height: 94%;
       background-image: url(https://images.ctfassets.net/rz1oowkt5gyp/3N2U3C71rApm61cGFxnc2E/970b010002488a09a420282df5e7b43a/Carousel_Image_Boards_2x.png?w=1140&fm=webp);
       background-size: cover;
-      background-position: top;
+      background-position: center;
       border-radius: 0.7rem;
     }
     &--img--lists {
@@ -324,7 +324,7 @@ mat-form-field {
     }
 
     &--scroll {
-      max-width: 1000px;
+      max-width: 1500px;
       display: flex;
       justify-content: flex-end;
 
