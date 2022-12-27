@@ -4,7 +4,7 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
-import { IColumn, TodoService } from '../todo.service';
+import { IColumn, TodoService } from 'src/app/todo.service';
 
 export interface DialogData {
   title: string;

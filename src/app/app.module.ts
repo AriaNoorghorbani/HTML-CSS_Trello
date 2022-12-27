@@ -9,7 +9,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -21,13 +20,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddTaskComponent } from './todo-list/add-todo/add-todo.component';
 import { TaskEditDialogComponent } from './todo-list/task-edit-dialog/task-edit-dialog.component';
 import { TaskDeleteDialogComponent } from './todo-list/task-delete-dialog/task-delete-dialog.component';
-import { TasksColumnComponent } from './tasks-column/tasks-column.component';
-import { ColumnsComponent } from './columns/columns.component';
 import { NewListComponent } from './todo-list/new-list-dialog/new-list-dialog.component';
-import { ColumnEditDialogComponent } from './columns/column-edit-dialog/column-edit-dialog.component';
-import { ColumnDeleteDialogComponent } from './columns/column-delete-dialog/column-delete-dialog.component';
 import { MainTaskComponent } from './main-task/main-task.component';
 import { PagesModule } from './pages/pages.module';
+import { ColumnModule } from './columns/column.module';
 
 @NgModule({
   declarations: [
@@ -36,11 +32,7 @@ import { PagesModule } from './pages/pages.module';
     AddTaskComponent,
     TaskEditDialogComponent,
     TaskDeleteDialogComponent,
-    ColumnDeleteDialogComponent,
-    TasksColumnComponent,
-    ColumnsComponent,
     NewListComponent,
-    ColumnEditDialogComponent,
     MainTaskComponent,
   ],
   imports: [
@@ -51,18 +43,19 @@ import { PagesModule } from './pages/pages.module';
     HttpClientModule,
     FormsModule,
     PagesModule,
+    // ColumnModule,
     NgbModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    DragDropModule,
     MatDialogModule,
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
   ],
+  exports: [AddTaskComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
