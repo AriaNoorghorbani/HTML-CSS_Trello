@@ -11,6 +11,7 @@ import { ColumnEditDialogComponent } from './column-edit-dialog/column-edit-dial
 import { TasksColumnComponent } from './tasks-column/tasks-column.component';
 import { ColumnsComponent } from './columns/columns.component';
 import { AppModule } from '../app.module';
+import { TasksModule } from '../tasks/tasks.module';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,8 @@ import { AppModule } from '../app.module';
     MatInputModule,
     MatDialogModule,
     FormsModule,
-    AppModule,
+    // TasksModule,
   ],
   exports: [ColumnsComponent],
 })
-export class ColumnModule {}
+export class ColumnsModule {}

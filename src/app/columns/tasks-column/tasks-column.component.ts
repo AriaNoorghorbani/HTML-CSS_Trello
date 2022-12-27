@@ -7,10 +7,10 @@ import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Task } from '../../model/task';
 import { ColumnEditDialogComponent } from '../column-edit-dialog/column-edit-dialog.component';
-import { TaskDeleteDialogComponent } from '../../todo-list/task-delete-dialog/task-delete-dialog.component';
-import { TaskEditDialogComponent } from '../../todo-list/task-edit-dialog/task-edit-dialog.component';
 import { IColumn, TodoService } from '../../todo.service';
 import { ColumnDeleteDialogComponent } from '../column-delete-dialog/column-delete-dialog.component';
+import { TaskDeleteDialogComponent } from 'src/app/tasks/task-delete-dialog/task-delete-dialog.component';
+import { TaskEditDialogComponent } from 'src/app/tasks/task-edit-dialog/task-edit-dialog.component';
 
 @Component({
   selector: 'app-tasks-column',

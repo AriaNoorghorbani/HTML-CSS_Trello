@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NewListComponent } from '../todo-list/new-list-dialog/new-list-dialog.component';
+import { NewListComponent } from '../tasks/new-list-dialog/new-list-dialog.component';
 
 @Component({
   selector: 'app-navbar',
