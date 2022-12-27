@@ -728,3 +728,89 @@ mat-form-field {
     height: 128px;
   }
 }
+
+.powerful {
+  display: flex;
+  flex-direction: column;
+  width: 1140px;
+  margin: 1.5rem auto 0 auto;
+  height: 610px;
+  gap: 1rem;
+
+  .content {
+    width: 664px;
+
+    h3 {
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      color: #141414;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      color: #141414;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #555555;
+      line-height: 1.8rem;
+    }
+  }
+
+  .cards {
+    display: flex;
+    gap: 1.8rem;
+
+    .card {
+      width: 33%;
+      height: 390px;
+      padding: 1.1rem;
+      background-color: rgb(250, 251, 252);
+      border: none;
+
+      img {
+        width: 100px;
+        margin-bottom: 0.5rem;
+      }
+
+      .content {
+        width: 300px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          height: 15%;
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: #141414;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #505050;
+          height: 50%;
+        }
+        button {
+          align-self: center;
+          background-color: white;
+          color: rgb(80, 79, 79);
+          border: 0.5px solid rgb(0, 101, 255);
+          margin: 0.2rem auto 0 0;
+          padding: 0.4rem 0.9rem;
+          font-size: 1rem;
+          transition: all 250ms ease-out 0s;
+
+          &:hover {
+            background-color: rgb(222, 235, 255);
+            transition: all 250ms ease-out 0s;
+          }
+        }
+      }
+    }
+  }
+}
