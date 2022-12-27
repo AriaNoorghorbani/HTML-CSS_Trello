@@ -601,26 +601,31 @@ mat-form-field {
   .content {
     display: flex;
     flex-direction: column;
-    // gap: 1.5rem;
+    margin-top: 1.6rem;
     width: 59%;
     min-width: 1108px;
     height: 1040px;
 
     button {
       align-content: center;
-      margin: auto;
-      margin-bottom: 2rem;
+      margin: 1rem auto 3.6rem auto;
       background-color: white;
-      color: black;
-      border-radius: 0.2rem;
+      color: rgb(54, 54, 54);
+      border-radius: 0.4rem;
       max-width: 2100px;
+      font-size: 1.02rem;
+      padding: 0.4rem 1.1rem;
+
+      &:hover {
+        background-color: rgb(222, 235, 255);
+      }
     }
 
     .boxs {
       display: flex;
       gap: 4rem;
       flex-direction: column;
-      height: 830px;
+      height: 770px;
     }
 
     .box {
